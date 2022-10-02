@@ -1,0 +1,105 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+import Card from "../components/CardProject.vue"
+
+const projects = {
+  FyloLanding: {
+    tag: "Html - Sass",
+    title: "Fylo Landing Page",
+    desc: "Frontend Mentor challenge solution",
+    urlImg: "public/assets/projects/fylo-landing.jpg",
+    urlRepo: "https://github.com/dnlambb/fylo-landing-page",
+    urlWeb: "https://dnlambb.github.io/fylo-landing-page/",
+  },
+  GoogleClon: {
+    tag: "Html - Css",
+    title: "Google Clon",
+    desc: "Clone Layer of Google Search",
+    urlImg: "public/assets/projects/google-clon.jpg",
+    urlRepo: "https://github.com/dnlambb/google-clon",
+    urlWeb: "https://dnlambb.github.io/google-clon/",
+  },
+  ApiIp: {
+    tag: "JS - Pico.css",
+    title: "API IP",
+    desc: "Consuming an API to return IP provider information",
+    urlImg: "public/assets/projects/api-ip.png",
+    urlRepo: "https://github.com/dnlambb/API-IP",
+    urlWeb: "https://dnlambb.github.io/API-IP/",
+  },
+  TimerUnderConstruction: {
+    tag: "JS - Css",
+    title: "Timer Under Construction",
+    desc: "Under construction page template with timer",
+    urlImg: "public/assets/projects/timer-under-construction.jpg",
+    urlRepo: "https://github.com/dnlambb/timer-under-construction",
+    urlWeb: "https://dnlambb.github.io/timer-under-construction/",
+  },
+  AsyncLanding: {
+    tag: "JS - Tailwind",
+    title: "Async Landing",
+    desc: "Landing Page of the Platzi course",
+    urlImg: "public/assets/projects/async-landing.jpg",
+    urlRepo: "https://github.com/dnlambb/async-landing",
+    urlWeb: "https://dnlambb.github.io/async-landing/",
+  },
+}
+---
+
+<MainLayout
+  title="Daniel Cordero | Projects"
+  description="Projects section of my personal page. Here you can see and find information about my projects."
+>
+  <main>
+    <h1>Projects</h1>
+    <section class="cards-grid">
+      <Card project={projects}/>
+    </section>
+    <a class="button-primary" href="https://github.com/dnlambb?tab=repositories" text-glitch="Moreprojects">More projects</a>
+  </main>
+</MainLayout>
+
+<style lang="scss">
+@import "../styles/colors.scss";
+@import "../styles/button-primary.scss";
+
+main {
+  width: 100%;
+  padding: 4rem 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: $orange-light;
+    text-align: center;
+  }
+  .cards-grid {
+    margin: 4rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &__project {
+      margin: 0 auto;
+      width: 40rem;
+      background-color: red;
+    }
+  }
+
+}
+@media (min-width: 768px) {
+  main {
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+@media (min-width: 2000px) {
+  main {
+    .cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+</style>
