@@ -1,0 +1,32 @@
+---
+import AboutLayout from "../layouts/AboutLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import RandomFacts from "../layouts/RandomFacts.astro";
+---
+
+<MainLayout title="Daniel Cordero | About me" description="About me section of my personal page. Here you can find information about me, my knowledge and random facts.">
+  <main>
+    <h1>About me</h1>
+    <AboutLayout />
+    <RandomFacts />
+  </main>
+</MainLayout>
+
+<style lang="scss">
+@import "../styles/colors.scss";
+
+main {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+
+  h1 {
+    text-align: center;
+    color: $orange-light;
+  }
+}
+</style>
