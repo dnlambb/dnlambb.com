@@ -1,0 +1,135 @@
+<section>
+  <h2>Knowledge</h2>
+  <div class="frontend-container">
+    <h3>Frontend</h3>
+    <div class="img-container">
+      <span class="tooltip" data-tooltip="Html">
+        <img src="public/assets/knowledge/html.svg" alt="Html">
+      </span>
+      <span class="tooltip" data-tooltip="Css">
+        <img src="public/assets/knowledge/css.svg" alt="Css">
+      </span>
+      <span class="tooltip" data-tooltip="JavaScript">
+        <img src="public/assets/knowledge/javascript.svg" alt="JavaScript">
+      </span>
+      <span class="tooltip" data-tooltip="Sass">
+        <img src="public/assets/knowledge/sass.svg" alt="Sass">
+      </span>
+      <span class="tooltip" data-tooltip="Bootstrap">
+        <img src="public/assets/knowledge/bootstrap.svg" alt="Bootstrap">
+      </span>
+      <span class="tooltip" data-tooltip="React">
+        <img src="public/assets/knowledge/react.svg" alt="React">
+      </span>
+      <span class="tooltip" data-tooltip="Vue">
+        <img src="public/assets/knowledge/vue.svg" alt="Vue">
+      </span>
+
+    </div>
+  </div>
+  <div class="backend-container">
+    <h3>Backend</h3>
+    <div class="img-container">
+      <span class="tooltip" data-tooltip="MySQL">
+        <img src="public/assets/knowledge/mysql.svg" alt="MySQL">
+      </span>
+      <span class="tooltip" data-tooltip="Oracle">
+        <img src="public/assets/knowledge/oracle.svg" alt="Oracle">
+      </span>
+      <span class="tooltip" data-tooltip="Mongodb">
+        <img src="public/assets/knowledge/mongodb.svg" alt="Mongodb">
+      </span>
+      <span class="tooltip" data-tooltip="Python">
+        <img src="public/assets/knowledge/python.svg" alt="Python">
+      </span>
+    </div>
+  </div>
+  <div class="others-container">
+    <h3>Others</h3>
+    <div class="img-container">
+      <span class="tooltip" data-tooltip="Git">
+        <img src="public/assets/knowledge/git.svg" alt="Git">
+      </span>
+      <span class="tooltip" data-tooltip="Github">
+        <img src="public/assets/knowledge/github.svg" alt="Github" data-tooltip="Github">
+      </span>
+      <span class="tooltip" data-tooltip="NPM">
+        <img src="public/assets/knowledge/npm.svg" alt="Npm" data-tooltip="NPM">
+      </span>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+@import "../styles/colors.scss";
+@import "../styles/tooltip.scss";
+
+section {
+  max-width: 80rem;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+  h2 {
+    color: $orange-light;
+    text-align: center;
+  }
+  .frontend-container,
+  .backend-container,
+  .others-container {
+    width: 100%;
+
+    h3 {
+      text-align: center;
+      margin: 4rem 0;
+    }
+    .img-container {
+      display: grid;
+      place-content: center;
+      grid-template-columns: repeat(2, auto);
+      gap: 2rem;
+      img {
+        width: 6rem;
+      }
+    }
+  }
+}
+@media (min-width: 425px) {
+  section {
+    .frontend-container,
+    .backend-container,
+    .others-container {
+      .img-container {
+        grid-template-columns: repeat(3, auto);
+      }  
+    }
+  }
+}
+@media (min-width: 768px) {
+  section {
+    display: grid;
+    grid-template-areas:
+    "heading heading"
+    "frontend backend"
+    "others others";
+    h2 {
+      grid-area: heading;
+    }
+    .frontend-container {
+      grid-area: frontend;
+    }
+    .backend-container {
+      grid-area: backend;
+    }
+    .others-container {
+      grid-area: others;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  section {
+    max-width: 90rem;
+    grid-template-areas:
+    "heading heading heading"
+    "frontend backend others";
+  }
+}
+</style>

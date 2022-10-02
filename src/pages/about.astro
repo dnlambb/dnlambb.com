@@ -1,5 +1,6 @@
 ---
 import AboutLayout from "../layouts/AboutLayout.astro";
+import KnowledgeLayout from "../layouts/KnowledgeLayout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import RandomFacts from "../layouts/RandomFacts.astro";
 ---
@@ -9,6 +10,7 @@ import RandomFacts from "../layouts/RandomFacts.astro";
     <h1>About me</h1>
     <AboutLayout />
     <RandomFacts />
+    <KnowledgeLayout />
   </main>
 </MainLayout>
 
@@ -18,11 +20,6 @@ import RandomFacts from "../layouts/RandomFacts.astro";
 main {
   width: 100%;
   padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
 
   h1 {
     text-align: center;
