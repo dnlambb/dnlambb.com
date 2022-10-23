@@ -8,12 +8,14 @@ import CardLink from '../components/CardLink.astro';
 	description="This is my personal website. Here you can: see my projects and education, know about me and my knowledge... ">
 	<main>
 		<section>
-			<h1>
-				<small>Hi there, I'm</small><br />
-				<span class="text-gradient">Daniel Cordero</span>
-			</h1>
+			<div class="order-reverse-items">
+				<h1 class="text-glitch" text-glitch="Daniel Cordero">
+					Daniel Cordero
+				</h1>
+				<p>Hi there, I'm</p>
+			</div>
 			<p>This is my personal website.<br />
-				Here you can see my projects, know about me, my education, certificates
+				Here you can know about me, see my projects, my education, certificates
 				and how to contact me.</p>
 			<ul role="list" class="link-card-grid">
 				<CardLink
@@ -33,7 +35,7 @@ import CardLink from '../components/CardLink.astro';
 
 <style lang="scss">
 @import "../styles/colors.scss";
-@import "../styles/text-gradient.scss";
+@import "../styles/text-glitch.scss";
 main {
 	width: 100%;
 	height: 100vh;
@@ -47,16 +49,17 @@ main {
 	section {
 		width: fit-content;
 		padding: 2rem;
+		.order-reverse-items {
+			display: flex;
+			flex-direction: column-reverse;
+		}
 		h1 {
 			width: fit-content;
 			margin: 0 auto;
 			text-align: center;
 			letter-spacing: 1rem;
-			color: $color-text;
-			span {
-				color: $orange-light;
-				user-select: none;
-			}
+			color: $orange-light;
+			user-select: none;
 		}
 		p {
 			margin-top: 6rem;
