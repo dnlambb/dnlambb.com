@@ -1,68 +1,71 @@
+---
+import Tooltip from "../components/Tooltip.vue";
+---
+
 <section>
   <h2>Knowledge</h2>
   <div class="frontend-container">
     <h3>Frontend</h3>
     <div class="img-container">
-      <span class="tooltip" data-tooltip="Html">
+      <Tooltip string-tooltip="Html">
         <img src="public/assets/knowledge/html.svg" alt="Html">
-      </span>
-      <span class="tooltip" data-tooltip="Css">
+      </Tooltip>
+      <Tooltip string-tooltip="Css">
         <img src="public/assets/knowledge/css.svg" alt="Css">
-      </span>
-      <span class="tooltip" data-tooltip="JavaScript">
+      </Tooltip>
+      <Tooltip string-tooltip="JavaScript">
         <img src="public/assets/knowledge/javascript.svg" alt="JavaScript">
-      </span>
-      <span class="tooltip" data-tooltip="Sass">
+      </Tooltip>
+      <Tooltip string-tooltip="Sass">
         <img src="public/assets/knowledge/sass.svg" alt="Sass">
-      </span>
-      <span class="tooltip" data-tooltip="Bootstrap">
+      </Tooltip>
+      <Tooltip string-tooltip="Bootstrap">
         <img src="public/assets/knowledge/bootstrap.svg" alt="Bootstrap">
-      </span>
-      <span class="tooltip" data-tooltip="React">
+      </Tooltip>
+      <Tooltip string-tooltip="React">
         <img src="public/assets/knowledge/react.svg" alt="React">
-      </span>
-      <span class="tooltip" data-tooltip="Vue">
+      </Tooltip>
+      <Tooltip string-tooltip="Vue">
         <img src="public/assets/knowledge/vue.svg" alt="Vue">
-      </span>
+      </Tooltip>
 
     </div>
   </div>
   <div class="backend-container">
     <h3>Backend</h3>
     <div class="img-container">
-      <span class="tooltip" data-tooltip="MySQL">
+      <Tooltip string-tooltip="MySQL">
         <img src="public/assets/knowledge/mysql.svg" alt="MySQL">
-      </span>
-      <span class="tooltip" data-tooltip="Oracle">
+      </Tooltip>
+      <Tooltip string-tooltip="Oracle">
         <img src="public/assets/knowledge/oracle.svg" alt="Oracle">
-      </span>
-      <span class="tooltip" data-tooltip="Mongodb">
+      </Tooltip>
+      <Tooltip string-tooltip="Mongodb">
         <img src="public/assets/knowledge/mongodb.svg" alt="Mongodb">
-      </span>
-      <span class="tooltip" data-tooltip="Python">
+      </Tooltip>
+      <Tooltip string-tooltip="Python">
         <img src="public/assets/knowledge/python.svg" alt="Python">
-      </span>
+      </Tooltip>
     </div>
   </div>
   <div class="others-container">
     <h3>Others</h3>
     <div class="img-container">
-      <span class="tooltip" data-tooltip="Git">
+      <Tooltip string-tooltip="Git">
         <img src="public/assets/knowledge/git.svg" alt="Git">
-      </span>
-      <span class="tooltip" data-tooltip="Github">
-        <img src="public/assets/knowledge/github.svg" alt="Github" data-tooltip="Github">
-      </span>
-      <span class="tooltip" data-tooltip="NPM">
-        <img src="public/assets/knowledge/npm.svg" alt="Npm" data-tooltip="NPM">
-      </span>
+      </Tooltip>
+      <Tooltip string-tooltip="GitHub">
+        <img src="public/assets/knowledge/github.svg" alt="Github">
+      </Tooltip>
+      <Tooltip string-tooltip="NPM">
+        <img src="public/assets/knowledge/npm.svg" alt="Npm">
+      </Tooltip>
     </div>
   </div>
 </section>
 
 <style lang="scss">
 @import "../styles/colors.scss";
-@import "../styles/tooltip.scss";
 
 section {
   max-width: 80rem;
