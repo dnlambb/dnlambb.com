@@ -1,0 +1,142 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CardEducation from "../components/CardEducation.vue";
+
+const education = {
+  Inacap: {
+    title: "Inacap",
+    subtitle: "Analist Programming",
+    date: "In process",
+    urlImg: "/assets/education/inacap.png",
+    alt: "Inacap logo",
+  },
+  Bootstrap4: {
+    title: "Bootstrap",
+    subtitle: "Css Framework",
+    date: "March 05, 2022",
+    urlImg: "/assets/education/certificate-bootstrap.png",
+    alt: "Certificate of Bootstrap, Platzi",
+  },
+  DesignDevelopers: {
+    title: "Design for Developers",
+    subtitle: "Fundamentals of programming",
+    date: "March 20, 2022",
+    urlImg: "/assets/education/certificate-design-developers.png",
+    alt: "Certificate of Design for Developers, Platzi",
+  },
+  FrontEndDeveloper: {
+    title: "Frontend Developer",
+    subtitle: "Web Development",
+    date: "April 29, 2022",
+    urlImg: "/assets/education/certificate-frontend-developer.png",
+    alt: "Certificate of Frontend Developer, Platzi",
+  },
+  EcmaScript6: {
+    title: "ECMASCRIPT 6+",
+    subtitle: "Web Development",
+    date: "May 05, 2022",
+    urlImg: "/assets/education/certificate-ecmascript-6.png",
+    alt: "Certificate of ECMASCRIPT 6+, Platzi",
+  },
+  HtmlCss: {
+    title: "Definitive Html Css",
+    subtitle: "Frontend Development",
+    date: "May 20, 2022",
+    urlImg: "/assets/education/certificate-html-css.png",
+    alt: "Certificate of html and css, Platzi",
+  },
+};
+---
+
+<MainLayout
+  title="Daniel Cordero | Education"
+  description="Education section of my personal page. Here you can find information about my education and certificates."
+>
+  <main>
+    <h1>Education and certificates</h1>
+    <p>
+      Here you can see what I have studied, where and when I have finished it.
+    </p>
+    <div class="education-container__cards-container">
+      <CardEducation cardData={education} />
+    </div>
+  </main>
+</MainLayout>
+
+<style lang="scss">
+  @import "../styles/colors.scss";
+
+  main {
+    width: 100%;
+    padding: 10rem 2rem;
+
+    h1 {
+      text-align: center;
+      color: $orange-light;
+    }
+    p {
+      margin: 4rem 0;
+      text-align: center;
+    }
+    .education-container {
+      width: 100%;
+      padding: 10rem 2rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      p {
+        max-width: 60rem;
+        margin: 0 auto;
+      }
+
+      &__cards-container {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        gap: 4rem;
+      }
+    }
+  }
+  @media (min-width: 680px) {
+    main {
+      .education-container {
+        &__cards-container {
+          margin: 0 auto;
+          width: fit-content;
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+        }
+      }
+    }
+  }
+  @media (min-width: 950px) {
+    main {
+      .education-container {
+        &__cards-container {
+          grid-template-columns: repeat(3, auto);
+        }
+      }
+    }
+  }
+  @media (min-width: 1300px) {
+    main {
+      .education-container {
+        &__cards-container {
+          grid-template-columns: repeat(2, auto);
+        }
+      }
+    }
+  }
+  @media (min-width: 2560px) {
+    main {
+      .education-container {
+        &__cards-container {
+          grid-template-columns: repeat(3, auto);
+        }
+      }
+    }
+  }
+</style>
