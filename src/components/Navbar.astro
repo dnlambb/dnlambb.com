@@ -1,0 +1,51 @@
+---
+import MenuLinks from "./MenuLinks.astro";
+
+---
+
+<header>
+  <nav>
+    <a href="/" class="brand-link">
+      <img src="/assets/lamb.svg" alt="lamb icon with link to home page" />
+    </a>
+    <MenuLinks />
+  </nav>
+</header>
+
+<style lang="scss">
+  @import "../styles/colors.scss";
+
+  header {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 6vh;
+    padding: 0 2rem;
+    border-bottom: 1px solid rgba(244, 244, 244, 0.6);
+    background: rgba(26, 28, 32, 0.9);
+
+    nav {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .brand-link {
+        width: fit-content;
+        height: fit-content;
+        img {
+          width: 4rem;
+          background: $color-text;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    header {
+      padding: 0 4rem;
+      flex-direction: row;
+    }
+  }
+</style>
