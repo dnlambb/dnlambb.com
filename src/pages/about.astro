@@ -1,16 +1,16 @@
 ---
-import AboutLayout from "../layouts/AboutLayout.astro";
-import KnowledgeLayout from "../layouts/KnowledgeLayout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import RandomFacts from "../layouts/RandomFactsLayout.astro";
+import About from "../components/About.astro";
+import Knowledge from "../components/Knowledge.astro";
+import RandomFacts from "../components/RandomFacts.astro";
 ---
 
 <MainLayout title="Daniel Cordero | About me" description="About me section of my personal page. Here you can find information about me, my knowledge and random facts.">
   <main>
     <h1>About me</h1>
-    <AboutLayout />
+    <About/>
     <RandomFacts />
-    <KnowledgeLayout />
+    <Knowledge />
   </main>
 </MainLayout>
 
@@ -19,7 +19,7 @@ import RandomFacts from "../layouts/RandomFactsLayout.astro";
 
 main {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 10rem 2rem;
 
   h1 {
     text-align: center;
