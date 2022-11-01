@@ -1,0 +1,39 @@
+---
+import EndMessage from "./EndMessage.vue";
+
+let year = new Date().getFullYear();
+---
+
+<footer>
+  <EndMessage message="Built by Daniel Cordero with love" />
+  <p class="license">
+    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+      CC BY-NC-SA 4.0
+    </a>
+    {year} &copy; Daniel Cordero
+  </p>
+</footer>
+
+<style lang="scss">
+  @import "../styles/colors.scss";
+
+  footer {
+    width: 100%;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    border-top: 1px solid rgba(244, 244, 244, 0.6);
+
+    .license {
+      margin-top: 4rem;
+      text-align: center;
+      color: $color-text;
+      a {
+        text-decoration: underline;
+      }
+      a:hover {
+        text-decoration: underline $orange-light;
+        transition: 300ms;
+      }
+    }
+  }
+</style>
