@@ -6,7 +6,6 @@
     and study as autodidact. My current goal is to work as a developer and get
     experience, expanding my knowledge.
   </p>
-  <button class="button-primary" text-glitch="DonwloadCV">Download CV</button>
 </section>
 <style lang="scss">
   @import "../styles/colors.scss";
@@ -48,8 +47,7 @@
       grid-template-columns: 30rem 60rem;
       grid-template-areas:
         "img text"
-        "img text"
-        "btn btn";
+        "img text";
       gap: 2rem 0;
       img {
         grid-area: img;
@@ -58,10 +56,6 @@
       p {
         grid-area: text;
         align-self: center;
-      }
-      button {
-        height: fit-content;
-        grid-area: btn;
       }
     }
   }
