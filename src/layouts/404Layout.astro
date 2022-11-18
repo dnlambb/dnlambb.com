@@ -1,0 +1,122 @@
+---
+import Navbar from '../components/Navbar.astro';
+
+export interface Props {
+	title: string;
+	description: string;
+}
+
+const { title } = Astro.props;
+const { description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description}>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Chivo&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Navbar />
+    <slot />
+	</body>
+</html>
+<style lang="scss" is:global>
+@import "../styles/colors.scss";
+
+$font-title: 'Andika', sans-serif;
+$font-body: 'Chivo', sans-serif;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+*::selection {
+	color: $color-bg;
+	background: $orange-light;
+}
+
+body {
+	background: $color-bg;
+	font-family: $font-body;
+}
+
+h1 {
+	font-family: $font-title;
+	font-size: 6rem;
+	line-height: 6rem;
+	font-weight: bold;
+}
+
+h2,
+h3,
+h4 {
+  font-family: $font-title;
+  font-weight: 500;
+	color: $color-text;
+}
+
+p,
+a,
+li,
+button,
+small {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: $font-body;
+	color: $color-text;
+}
+
+h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+code {
+	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 8rem;
+		line-height: 8rem;
+  }
+  p,
+  a,
+  li,
+  button,
+  h4 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+</style>

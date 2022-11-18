@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/404Layout.astro";
+---
+
+<Layout title="404 Page not found" description="page not found">
+  <main>
+    <section>
+      <h1>404</h1>
+      <h2>It seems that... we are lost</h2>
+      <a href="/" class="button-primary" text-glitch="GotoHome">Go to Home</a>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  @import "../styles/colors.scss";
+  @import "../styles/button-primary.scss";
+
+  main {
+    min-height: 100vh;
+    padding: 10rem 2rem;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    background: url("public/assets/404.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    section {
+      margin: 0 auto;
+      text-align: center;
+
+      h1,
+      h2 {
+        color: $color-bg;
+      }
+      h2 {
+        max-width: 90rem;
+        margin: 4rem 0;
+      }
+    }
+  }
+</style>
