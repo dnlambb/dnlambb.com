@@ -3,7 +3,7 @@
     <div class="education-card__text-container">
       <h3>{{ item.title }}</h3>
       <p>{{ item.subtitle }}</p>
-      <p><small>Finished:</small> {{ item.date }}</p>
+      <p><small>Finished: {{ item.date }}</small></p>
     </div>
     <picture class="education-card__image-container">
       <img :src="item.urlImg" :alt="item.alt" />
