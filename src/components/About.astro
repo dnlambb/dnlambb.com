@@ -1,68 +1,68 @@
 <section>
   <img src="/assets/profile.png" alt="profile image of me" />
   <p>
-    I'm a Frontend Developer from Chile. I am currently studying programming
-    analyst at Inacap University. On my free days I develop personal projects
-    and study as an autodidact. My current goal is to work as Frontend and
-    keep expanding my knowledge.
+    I am a junior developer from Chile. I am currently studying programming
+    analyst at Inacap University. In my free time I develop personal projects
+    and study as autodidact. My current goal is to work as a developer and get
+    experience, expanding my knowledge.
   </p>
   <button class="button-primary" text-glitch="DonwloadCV">Download CV</button>
 </section>
 <style lang="scss">
-@import "../styles/colors.scss";
-@import "../styles/button-primary.scss";
+  @import "../styles/colors.scss";
+  @import "../styles/button-primary.scss";
 
-section {
-  max-width: 60rem;
-  margin: 4rem auto 8rem;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-
-  img {
-    width: 20rem;
-    margin: 0 auto;
-    border-radius: 100%;
-    object-fit: cover;
-    border: 2px solid $color-text;
-  }
-
-  p {
-    line-height: 3rem;
-    text-align: center;
-  }
-}
-@media (min-width: 425px) {
   section {
-    p {
-      text-align: start;
-    }
-  }
-}
-@media (min-width: 1440px) {
-  section {
-    max-width: 100%;
-    place-content: center;
-    display: grid;
-    grid-template-columns: 30rem 60rem;
-    grid-template-areas:
-    "img text"
-    "img text"
-    "btn btn";
-    gap: 2rem 0;
+    max-width: 60rem;
+    margin: 4rem auto 8rem;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
     img {
-      grid-area: img;
-      width: 22rem;
+      width: 20rem;
+      margin: 0 auto;
+      border-radius: 100%;
+      object-fit: cover;
+      border: 2px solid $color-text;
     }
+
     p {
-      grid-area: text;
-      align-self: center;
-    }
-    button {
-      height: fit-content;
-      grid-area: btn;
+      line-height: 3rem;
+      text-align: center;
     }
   }
-}
+  @media (min-width: 425px) {
+    section {
+      p {
+        text-align: start;
+      }
+    }
+  }
+  @media (min-width: 1440px) {
+    section {
+      max-width: 100%;
+      place-content: center;
+      display: grid;
+      grid-template-columns: 30rem 60rem;
+      grid-template-areas:
+        "img text"
+        "img text"
+        "btn btn";
+      gap: 2rem 0;
+      img {
+        grid-area: img;
+        width: 22rem;
+      }
+      p {
+        grid-area: text;
+        align-self: center;
+      }
+      button {
+        height: fit-content;
+        grid-area: btn;
+      }
+    }
+  }
 </style>
