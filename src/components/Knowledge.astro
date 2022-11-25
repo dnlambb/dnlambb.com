@@ -1,9 +1,15 @@
 ---
 import Tooltip from "./Tooltip.vue";
+
+export interface Props {
+  heading: string;
+  headingOther: string;
+}
+const { heading, headingOther } = Astro.props;
 ---
 
 <section>
-  <h2>Knowledge</h2>
+  <h2>{heading}</h2>
   <div class="frontend-container">
     <h3>Frontend</h3>
     <div class="img-container">
@@ -52,13 +58,13 @@ import Tooltip from "./Tooltip.vue";
     </div>
   </div>
   <div class="others-container">
-    <h3>Others</h3>
+    <h3>{headingOther}</h3>
     <div class="img-container">
       <Tooltip string-tooltip="Git">
         <img src="/assets/knowledge/git.svg" alt="Git">
       </Tooltip>
       <Tooltip string-tooltip="GitHub">
-        <img src="/assets/knowledge/github.svg" alt="Github">
+        <img src="/assets/knowledge/github.svg" alt="GitHub">
       </Tooltip>
       <Tooltip string-tooltip="NPM">
         <img src="/assets/knowledge/npm.svg" alt="Npm">

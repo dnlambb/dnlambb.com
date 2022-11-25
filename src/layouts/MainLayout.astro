@@ -3,16 +3,25 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 export interface Props {
+	lang: string;
 	title: string;
 	description: string;
 }
 
-const { title } = Astro.props;
-const { description } = Astro.props;
+const { lang, title, description } = Astro.props;
+
+let changeLanguage;
+
+if (lang == "en") {
+	changeLanguage = "Spanish" 
+}
+else {
+	changeLanguage = "English"
+}
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -25,7 +34,7 @@ const { description } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Chivo&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<Navbar />
+		<Navbar language={changeLanguage}/>
 		<slot />
 		<Footer />
 	</body>
@@ -97,6 +106,19 @@ h4 {
 code {
 	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 		Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f499;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $orange-light;
 }
 
 @media (min-width: 768px) {

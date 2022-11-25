@@ -1,12 +1,12 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
-import Card from "../components/CardProject.vue"
+import MainLayout from "../../layouts/MainLayout.astro"
+import Card from "../../components/CardProject.vue"
 
 const projects = {
   FyloLanding: {
     tag: "Html - Sass",
     title: "Fylo Landing Page",
-    desc: "Frontend Mentor challenge solution",
+    desc: "Solución del reto de Frontend Mentor",
     urlImg: "/assets/projects/fylo-landing.jpg",
     urlRepo: "https://github.com/dnlambb/fylo-landing-page",
     urlWeb: "https://dnlambb.github.io/fylo-landing-page/",
@@ -14,7 +14,7 @@ const projects = {
   GoogleClon: {
     tag: "Html - Css",
     title: "Google Clon",
-    desc: "Clone of the Google browser layout",
+    desc: "Clon del layout del navegador de Google",
     urlImg: "/assets/projects/google-clon.jpg",
     urlRepo: "https://github.com/dnlambb/google-clon",
     urlWeb: "https://dnlambb.github.io/google-clon/",
@@ -22,7 +22,7 @@ const projects = {
   ApiIp: {
     tag: "JS - Pico.css",
     title: "API IP",
-    desc: "Consuming an API to return IP provider information",
+    desc: "Consumir una API para devolver la información del proveedor de IP",
     urlImg: "/assets/projects/api-ip.png",
     urlRepo: "https://github.com/dnlambb/API-IP",
     urlWeb: "https://dnlambb.github.io/API-IP/",
@@ -30,7 +30,7 @@ const projects = {
   TimerUnderConstruction: {
     tag: "JS - Css",
     title: "Timer Under Construction",
-    desc: "Under construction page template with timer",
+    desc: "Plantilla de página web bajo construcción con temporizador",
     urlImg: "/assets/projects/timer-under-construction.jpg",
     urlRepo: "https://github.com/dnlambb/timer-under-construction",
     urlWeb: "https://dnlambb.github.io/timer-under-construction/",
@@ -38,7 +38,7 @@ const projects = {
   AsyncLanding: {
     tag: "JS - Tailwind",
     title: "Async Landing",
-    desc: "Asynchronous Platzi course landing page",
+    desc: "Página de inicio asíncrona del curso de Platzi",
     urlImg: "/assets/projects/async-landing.jpg",
     urlRepo: "https://github.com/dnlambb/async-landing",
     urlWeb: "https://dnlambb.github.io/async-landing/",
@@ -47,22 +47,22 @@ const projects = {
 ---
 
 <MainLayout
-  lang="en"
-  title="Daniel Cordero • Projects"
-  description="I'm Daniel Cordero, Frontend Developer. Here you can see and find information about my projects."
+  lang="es"
+  title="Daniel Cordero • Proyectos"
+  description="Hola, soy Daniel Cordero, Frontend Developer. Aquí puedes ver información sobre mis proyectos."
 >
   <main>
-    <h1>Projects</h1>
+    <h1>Proyectos</h1>
     <section class="cards-grid">
       <Card project={projects}/>
     </section>
-    <a class="button-primary" href="https://github.com/dnlambb?tab=repositories" text-glitch="Moreprojects">More projects</a>
+    <a class="button-primary" href="https://github.com/dnlambb?tab=repositories" text-glitch="Másproyectos">Más proyectos</a>
   </main>
 </MainLayout>
 
 <style lang="scss">
-@import "../styles/colors.scss";
-@import "../styles/button-primary.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/button-primary.scss";
 
 main {
   width: 100%;

@@ -1,97 +1,97 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import CardEducation from "../components/CardEducation.vue";
+import MainLayout from "../../layouts/MainLayout.astro";
+import CardEducation from "../../components/CardEducation.vue";
 
 const education = {
   Inacap: {
     title: "Inacap",
-    subtitle: "Analist Programming",
-    date: "In process",
+    subtitle: "Analista Programador",
+    date: "En proceso",
     urlImg: "/assets/education/inacap.png",
     alt: "Inacap logo",
   },
   PythonBasic: {
-    title: "Python Basic",
-    subtitle: "Backend Development",
-    date: "November 23, 2021",
+    title: "Python básico",
+    subtitle: "Desarrollo Backend",
+    date: "Noviembre 23, 2021",
     urlImg: "/assets/education/certificate-python-basic.png",
-    alt: "Certificate of Python Basic, Platzi",
+    alt: "Certificado de Python Basic, Platzi",
   },
   JavascriptBasic: {
-    title: "JavaScript Basic",
-    subtitle: "Frontend/Backend Development",
-    date: "April 29, 2022",
+    title: "JavaScript básico",
+    subtitle: "Desarrollo Frontend/Backend",
+    date: "Abril 29, 2022",
     urlImg: "/assets/education/certificate-basic-javascript.png",
-    alt: "Certificate of JavaScript Basic, Platzi",
+    alt: "Certificado de JavaScript Basic, Platzi",
   },
   EcmaScript6: {
     title: "ECMASCRIPT 6+",
-    subtitle: "Frontend/Backend Development",
-    date: "May 05, 2022",
+    subtitle: "Desarrollo Frontend/Backend",
+    date: "Mayo 05, 2022",
     urlImg: "/assets/education/certificate-ecmascript-6.png",
-    alt: "Certificate of ECMASCRIPT 6+, Platzi",
+    alt: "Certificado de ECMASCRIPT 6+, Platzi",
   },
   FrontendDeveloper: {
-    title: "Frontend Developer",
-    subtitle: "Frontend Development",
-    date: "April 29, 2022",
+    title: "Desarrollador Frontend",
+    subtitle: "Desarrollo Frontend",
+    date: "Abril 29, 2022",
     urlImg: "/assets/education/certificate-frontend-developer.png",
-    alt: "Certificate of Frontend Developer, Platzi",
+    alt: "Certificado de Frontend Developer, Platzi",
   },
   FrontendPractical: {
-    title: "Frontend Practical",
-    subtitle: "Frontend Development",
-    date: "April 29, 2022",
+    title: "Frontend Práctico",
+    subtitle: "Desarrollo Frontend",
+    date: "Abril 29, 2022",
     urlImg: "/assets/education/certificate-frontend-developer-practical.png",
-    alt: "Certificate of Frontend Developer Practical, Platzi",
+    alt: "Certificado de Frontend Developer Practical, Platzi",
   },
   HtmlCss: {
-    title: "Definitive Html Css",
-    subtitle: "Frontend Development",
-    date: "May 20, 2022",
+    title: "Definitivo de Html y Css",
+    subtitle: "Desarrollo Frontend",
+    date: "Mayo 20, 2022",
     urlImg: "/assets/education/certificate-html-css.png",
-    alt: "Certificate of html and css, Platzi",
+    alt: "Certificado de html and css, Platzi",
   },
   DesignDevelopers: {
-    title: "Design for Developers",
-    subtitle: "Frontend Development",
-    date: "March 20, 2022",
+    title: "Diseño para programadores",
+    subtitle: "Desarrollo Frontend",
+    date: "Marzo 20, 2022",
     urlImg: "/assets/education/certificate-design-developers.png",
-    alt: "Certificate of Design for Developers, Platzi",
+    alt: "Certificado de Design for Developers, Platzi",
   },
   MobileFirst: {
     title: "Mobile First",
-    subtitle: "Responsive Design",
-    date: "May 19, 2022",
+    subtitle: "Diseño responsivo",
+    date: "Mayo 19, 2022",
     urlImg: "/assets/education/certificate-mobile-first.png",
-    alt: "Certificate of Mobile First, Platzi",
+    alt: "Certificado de Mobile First, Platzi",
   },
   Bootstrap4: {
     title: "Bootstrap",
     subtitle: "Css Framework",
-    date: "March 05, 2022",
+    date: "Marzo 05, 2022",
     urlImg: "/assets/education/certificate-bootstrap.png",
-    alt: "Certificate of Bootstrap, Platzi",
+    alt: "Certificado de Bootstrap, Platzi",
   },
   NPM: {
     title: "NPM",
-    subtitle: "Management of dependencies and packages",
-    date: "May 22, 2022",
+    subtitle: "Gestión de dependencias y paquetes",
+    date: "Mayo 22, 2022",
     urlImg: "/assets/education/certificate-npm.png",
-    alt: "Certificate of NPM, Platzi",
+    alt: "Certificado de NPM, Platzi",
   },
 };
 ---
 
 <MainLayout
-  lang="en"
-  title="Daniel Cordero • Education"
-  description="I'm Daniel Cordero, Frontend Developer. Here you can find information about my education and certificates."
+  lang="es"
+  title="Daniel Cordero • Educación"
+  description="Hola, soy Daniel Cordero, Frontend Developer. Aquí puedes encontrar información sobre mi educación y certificados."
 >
   <main>
-    <h1>Education and certificates</h1>
+    <h1>Educación y certificados</h1>
     <p>
-      Here you can see what I have studied, where and when I have finished it.
+      Aquí puedes ver que he estudiado, donde y cuando lo finalice.
     </p>
     <div class="education-container__cards-container">
       <CardEducation cardData={education} />
@@ -100,7 +100,7 @@ const education = {
 </MainLayout>
 
 <style lang="scss">
-  @import "../styles/colors.scss";
+  @import "../../styles/colors.scss";
 
   main {
     width: 100%;

@@ -1,14 +1,76 @@
 ---
 import MenuLinks from "./MenuLinks.astro";
 
+export interface Props {
+  language: string;
+}
+const { language, href } = Astro.props;
+
+let links = {}
+let currentHref;
+let changeLanguage;
+
+if (language == "English") {
+  changeLanguage = "/"
+  currentHref = "/es"
+  links = {
+    home: {
+      text: "Home",
+      href: "/es",
+    },
+    about: {
+      text: "Sobre",
+      href: "/es/about",
+    },
+    projects: {
+      text: "Proyectos",
+      href: "/es/projects",
+    },
+    education: {
+      text: "Educación",
+      href: "/es/education",
+    },
+    contact: {
+      text: "Contacto",
+      href: "/es/contact",
+    },
+  }
+}
+else {
+  currentHref = "/"
+  changeLanguage = "/es"
+  links = {
+    home: {
+      text: "Home",
+      href: "/",
+    },
+    about: {
+      text: "About",
+      href: "/about",
+    },
+    projects: {
+      text: "Projects",
+      href: "/projects",
+    },
+    education: {
+      text: "Education",
+      href: "/education",
+    },
+    contact: {
+      text: "Contact",
+      href: "/contact",
+    },
+  }
+}
 ---
 
 <header>
   <nav>
-    <a href="/" class="brand-link">
+    <a href={currentHref} class="brand-link">
       <img src="/assets/lamb.svg" alt="lamb icon with link to home page" />
     </a>
-    <MenuLinks />
+    <a href={changeLanguage}>{language}</a>
+    <MenuLinks links={links} />
   </nav>
 </header>
 
@@ -40,6 +102,12 @@ import MenuLinks from "./MenuLinks.astro";
           background: $color-text;
           border-radius: 100%;
         }
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        color: $orange-light;
       }
     }
   }

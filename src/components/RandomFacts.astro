@@ -1,11 +1,19 @@
+---
+export interface Props {
+  heading: string;
+  randomFacts: object;
+}
+
+const { heading, randomFacts } = Astro.props;
+---
 <section>
-  <h3>Random Facts of me</h3>
+  <h3>{heading}</h3>
   <ul>
-    <li><img src="/assets/randomFacts/dog.svg" alt="dog" /> I like dogs</li>
-    <li><img src="/assets/randomFacts/coffee.svg" alt="coffee" /> I like Coffee</li>
+    <li><img src="/assets/randomFacts/dog.svg" alt="dog" />{randomFacts.item1}</li>
+    <li><img src="/assets/randomFacts/coffee.svg" alt="coffee" />{randomFacts.item2}</li>
     <li>
       <img src="/assets/randomFacts/volleyball.svg" alt="ball of volleyball" />
-      I love Volleyball
+      {randomFacts.item3}
     </li>
   </ul>
 </section>
@@ -21,7 +29,7 @@ section {
     color: $orange-light;
   }
   ul {
-    width: max-content;
+    max-width: max-content;
     margin: 0 auto;
     list-style: none;
 

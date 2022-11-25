@@ -1,10 +1,14 @@
+---
+export interface Props{
+  message: string
+}
+const { message } = Astro.props;
+---
+
 <section>
   <img src="/assets/profile.png" alt="profile image of me" />
   <p>
-    I am a junior developer from Chile. I am currently studying programming
-    analyst at Inacap University. In my free time I develop personal projects
-    and study as autodidact. My current goal is to work as a developer and get
-    experience, expanding my knowledge.
+    { message }
   </p>
 </section>
 <style lang="scss">

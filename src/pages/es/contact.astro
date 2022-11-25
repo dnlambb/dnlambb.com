@@ -1,22 +1,22 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Tooltip from "../components/Tooltip.vue";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Tooltip from "../../components/Tooltip.vue";
 ---
 
 <MainLayout
-  lang="en"
-  title="Daniel Cordero • Contact"
-  description="I'm Daniel Cordero, Frontend Developer. Here you can see my contact and how to reach me on social networks"
+  lang="es"
+  title="Daniel Cordero • Contacto"
+  description="Hola, soy Daniel Cordero, Frontend Developer. Aquí puedes ver como contactarme y encontrarme en redes sociales."
 >
   <main>
-    <h1>Contact</h1>
+    <h1>Contacto</h1>
     <p>
-      Contact me if you want to tell me or ask me something.<br>
-      I also welcome any feedback about this website.
+      Contáctame si tienes algo que decirme o preguntarme.<br>
+      También es muy bienvenido cualquier feedback sobre este sitio web.
     </p>
     <section>
       <div class="list-container">
-        <p>I prefer the following ways of contact</p>
+        <p>Personalmente, prefiero estos medios de contacto</p>
         <ul class="contact-list">
           <Tooltip string-tooltip="Linkedin">
             <li>
@@ -33,7 +33,7 @@ import Tooltip from "../components/Tooltip.vue";
             </li>
           </Tooltip>
         </ul>
-        <p>But you can also find me or contact me in the following social networks</p>
+        <p>Pero también puedes contactarme o encontrarme en estas redes sociales</p>
         <ul class="social-list">
           <Tooltip string-tooltip="GitHub">
             <li>
@@ -66,7 +66,7 @@ import Tooltip from "../components/Tooltip.vue";
 </MainLayout>
 
 <style lang="scss">
-@import "../styles/colors.scss";
+@import "../../styles/colors.scss";
 
 
 main {

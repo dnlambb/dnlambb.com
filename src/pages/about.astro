@@ -3,30 +3,42 @@ import MainLayout from "../layouts/MainLayout.astro";
 import About from "../components/About.astro";
 import Knowledge from "../components/Knowledge.astro";
 import RandomFacts from "../components/RandomFacts.astro";
+
+const randomFacts = {
+  item1: "I like dogs",
+  item2: "I like coffee",
+  item3: "I love volleyball",
+}
 ---
 
-<MainLayout 
-  title="Daniel Cordero • About me" 
+<MainLayout
+  lang="en"
+  title="Daniel Cordero • About me"
   description="I'm Daniel Cordero, Frontend Developer. Here you can find information about me and my knowledge"
 >
   <main>
     <h1>About me</h1>
-    <About/>
-    <RandomFacts />
-    <Knowledge />
+    <About
+      message="I'm a junior developer from Chile. I'm currently studying programming analyst at Inacap University. In my free time I develop personal projects and study as an autodidact. My current goal is to work as a developer and get experience, expanding my knowledge."
+    />
+    <RandomFacts
+      heading="Random Facts of me"
+      randomFacts={randomFacts}
+    />
+    <Knowledge heading="Knowledge" headingOther="Others"/>
   </main>
 </MainLayout>
 
 <style lang="scss">
-@import "../styles/colors.scss";
+  @import "../styles/colors.scss";
 
-main {
-  width: 100%;
-  padding: 10rem 2rem;
+  main {
+    width: 100%;
+    padding: 10rem 2rem;
 
-  h1 {
-    text-align: center;
-    color: $orange-light;
+    h1 {
+      text-align: center;
+      color: $orange-light;
+    }
   }
-}
 </style>

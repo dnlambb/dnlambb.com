@@ -1,0 +1,95 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import CardLink from "../../components/CardLink.astro";
+---
+
+<MainLayout
+  lang="es"
+  title="Daniel Cordero • @dnlambb"
+  description="Hola, soy Daniel Cordero, Frontend Developer. Chile."
+>
+  <main>
+    <section>
+      <div class="order-reverse-items">
+        <h1 class="text-glitch" text-glitch="Daniel Cordero">Daniel Cordero</h1>
+        <p>Hola, yo soy</p>
+      </div>
+      <p>
+        Este es mi sitio web personal.<br />
+        Aquí puedes conocer sobre mí, mis proyectos, mi educación, certificados y como contactarme.
+      </p>
+      <ul role="list" class="link-card-grid">
+        <CardLink
+          href="https://github.com/dnlambb/dnlambb.com"
+          title="Repositorio"
+          body="El repositorio de este sitio web en GitHub."
+        />
+      </ul>
+    </section>
+  </main>
+</MainLayout>
+
+<style lang="scss">
+  @import "../../styles/colors.scss";
+  @import "../../styles/text-glitch.scss";
+  main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/public/assets/wavesBgMobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    section {
+      width: fit-content;
+      padding: 2rem;
+      .order-reverse-items {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      h1 {
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 1rem;
+        color: $orange-light;
+        user-select: none;
+      }
+      p {
+        margin-top: 6rem;
+        text-align: center;
+        line-height: 1.6;
+      }
+      .link-card-grid {
+        width: fit-content;
+        margin: 8rem auto 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    main {
+      background: url("/public/assets/wavesBgTablet.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      section {
+        .link-card-grid {
+          width: fit-content;
+          margin-top: 8rem;
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    main {
+      background: url("/public/assets/wavesBgDesktop.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+</style>

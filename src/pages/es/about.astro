@@ -1,0 +1,47 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import About from "../../components/About.astro";
+import Knowledge from "../../components/Knowledge.astro";
+import RandomFacts from "../../components/RandomFacts.astro";
+
+const randomFacts = {
+  item1: "Me gustan los perros",
+  item2: "Me gusta el café",
+  item3: "Amo el voleibol",
+}
+---
+
+<MainLayout
+  lang="es"
+  title="Daniel Cordero • Sobre mí"
+  description="Hola, soy Daniel Cordero, Frontend Developer. Aquí puedes encontrar información sobre mí y mi conocimiento."
+>
+  <main>
+    <h1>Sobre mí</h1>
+    <About
+      message="Soy un desarrollador junior de Chile. Actualmente, estudio Analista Programador en la universidad Inacap. En mi tiempo libre desarrollo proyectos personales y estudio como autodidacta. Mi objetivo actual es trabajar como desarrollador y ganar experiencia, ampliando mis conocimientos."
+    />
+    <RandomFacts
+      heading="Datos random sobre mí"
+      randomFacts={randomFacts}
+    />
+    <Knowledge
+      heading="Conocimientos"
+      headingOther="Otros"
+    />
+  </main>
+</MainLayout>
+
+<style lang="scss">
+  @import "../../styles/colors.scss";
+
+  main {
+    width: 100%;
+    padding: 10rem 2rem;
+
+    h1 {
+      text-align: center;
+      color: $orange-light;
+    }
+  }
+</style>

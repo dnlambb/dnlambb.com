@@ -1,13 +1,19 @@
+---
+export interface Props {
+  links: object;
+}
+const { links } = Astro.props;
+---
 <input id="menu-checkbox" type="checkbox" />
 <label class="menu-icon-container" for="menu-checkbox">
   <img class="icon" src="/assets/menu.svg" alt="menu icon" />
 </label>
 <ul class="list-links">
-  <li><a href="/">Home</a></li>
-  <li><a href="/about">About</a></li>
-  <li><a href="/projects">Projects</a></li>
-  <li><a href="/education">Education</a></li>
-  <li><a href="/contact">Contact</a></li>
+  <li><a href={links.home.href}>{links.home.text}</a></li>
+  <li><a href={links.about.href}>{links.about.text}</a></li>
+  <li><a href={links.projects.href}>{links.projects.text}</a></li>
+  <li><a href={links.education.href}>{links.education.text}</a></li>
+  <li><a href={links.contact.href}>{links.contact.text}</a></li>
 </ul>
 
 <style lang="scss">
