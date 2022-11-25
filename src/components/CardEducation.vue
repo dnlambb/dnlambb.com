@@ -61,7 +61,7 @@ export default {
 @media (min-width: 1300px) {
   .education-card {
     width: 60rem;
-    height: 20rem;
+    min-height: 20rem;
     display: grid;
     grid-template-columns: 1fr 40%;
     grid-template-areas: "text img";
