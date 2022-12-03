@@ -4,7 +4,7 @@ import MenuLinks from "./MenuLinks.astro";
 export interface Props {
   language: string;
 }
-const { language, href } = Astro.props;
+const { language } = Astro.props;
 
 let links = {}
 let currentHref;
@@ -82,6 +82,7 @@ else {
     z-index: 5;
     width: 100%;
     height: fit-content;
+    min-height: fit-content;
     padding: 0 2rem;
     border-bottom: 1px solid rgba(244, 244, 244, 0.6);
     background: rgba(26, 28, 32, 0.9);
