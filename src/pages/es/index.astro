@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import CardLink from "../../components/CardLink.astro";
+import Tooltip from "../../components/Tooltip.vue";
 ---
 
 <MainLayout
@@ -12,10 +13,10 @@ import CardLink from "../../components/CardLink.astro";
     <section>
       <div class="order-reverse-items">
         <h1 class="text-glitch" text-glitch="Daniel Cordero">Daniel Cordero</h1>
-        <p>Hola, yo soy</p>
+        <p>Hola, soy</p>
       </div>
+      <h2>Frontend Developer</h2>
       <p>
-        Este es mi sitio web personal.<br />
         Aquí puedes conocer sobre mí, mis proyectos, mi educación, certificados y como contactarme.
       </p>
       <ul role="list" class="link-card-grid">
@@ -25,57 +26,88 @@ import CardLink from "../../components/CardLink.astro";
           body="El repositorio de este sitio web en GitHub."
         />
       </ul>
+      <ul class="list-social">
+        <Tooltip string-tooltip="GitHub">
+          <li>
+            <a href="https://github.com/dnlambb">
+              <img src="/assets/social/github.svg" alt="Github" />
+            </a>
+          </li>
+        </Tooltip>
+        <Tooltip string-tooltip="Linkedin">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/"
+            >
+              <img src="/assets/social/linkedin.svg" alt="Linkedin" />
+            </a>
+          </li>
+        </Tooltip>
+      </ul>
     </section>
   </main>
 </MainLayout>
 
 <style lang="scss">
-  @import "../../styles/colors.scss";
-  @import "../../styles/text-glitch.scss";
-  main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("/public/assets/wave.svg") no-repeat center;
-    background-size: cover;
-    section {
+@import "../../styles/colors.scss";
+@import "../../styles/text-glitch.scss";
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/public/assets/wave.svg") no-repeat center;
+  background-size: cover;
+  section {
+    width: fit-content;
+    padding: 2rem;
+    .order-reverse-items {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    h1 {
       width: fit-content;
-      padding: 2rem;
-      .order-reverse-items {
-        display: flex;
-        flex-direction: column-reverse;
+      margin: 0 auto;
+      text-align: center;
+      color: $primary;
+      user-select: none;
+    }
+    h2 {
+      width: fit-content;
+      margin: 1rem auto 3rem;
+      text-align: center;
+      color: $primary;
+    }
+    p {
+      text-align: center;
+      line-height: 1.6;
+    }
+    .link-card-grid {
+      width: fit-content;
+      margin: 5.5rem auto;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .list-social {
+      width: fit-content;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+      img {
+        width: 5rem;
       }
+    }
+  }
+}
+@media (min-width: 440px) {
+  main {
+    section {
       h1 {
-        width: fit-content;
-        margin: 0 auto;
-        text-align: center;
         letter-spacing: 1rem;
-        color: $primary;
-        user-select: none;
-      }
-      p {
-        margin-top: 6rem;
-        text-align: center;
-        line-height: 1.6;
-      }
-      .link-card-grid {
-        width: fit-content;
-        margin: 8rem auto 0;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
       }
     }
   }
-  @media (min-width: 768px) {
-    main {
-      section {
-        .link-card-grid {
-          width: fit-content;
-          margin-top: 8rem;
-        }
-      }
-    }
-  }
+}
 </style>
