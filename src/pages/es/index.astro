@@ -38,10 +38,8 @@ import CardLink from "../../components/CardLink.astro";
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/public/assets/wavesBgMobile.svg");
-    background-repeat: no-repeat;
+    background: url("/public/assets/wave.svg") no-repeat center;
     background-size: cover;
-    background-position: center;
     section {
       width: fit-content;
       padding: 2rem;
@@ -72,24 +70,12 @@ import CardLink from "../../components/CardLink.astro";
   }
   @media (min-width: 768px) {
     main {
-      background: url("/public/assets/wavesBgTablet.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       section {
         .link-card-grid {
           width: fit-content;
           margin-top: 8rem;
         }
       }
-    }
-  }
-  @media (min-width: 1024px) {
-    main {
-      background: url("/public/assets/wavesBgDesktop.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
     }
   }
 </style>
