@@ -31,7 +31,7 @@ $slice-5: inset(80% -6px 5% 0);
   }
 
   &:after {
-    content: attr(text-glitch);
+    content: attr(button-glitch);
     display: block;
     position: absolute;
     top: 0;
@@ -44,7 +44,7 @@ $slice-5: inset(80% -6px 5% 0);
 
   &:hover:after {
     background: $primary;
-    animation: 1s glitch;
+    animation: 1s buttonglitch;
     animation-delay: 450ms;
     animation-timing-function: steps(2, end);
   }
@@ -54,7 +54,7 @@ $slice-5: inset(80% -6px 5% 0);
     transition: 400ms;
   }
 
-  @keyframes glitch {
+  @keyframes buttonglitch {
     0% {
       clip-path: $slice-1;
       transform: translate(-20px, -10px);
