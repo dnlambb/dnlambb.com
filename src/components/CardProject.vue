@@ -48,8 +48,8 @@ export default {
   width: 100%;
   height: 40rem;
   border-radius: 0.8rem;
-  border: 2px solid $orange-dark;
-  background: $color-bg;
+  border: 2px solid $primary;
+  background: $terciary;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 1fr 50% 20%;
@@ -61,8 +61,8 @@ export default {
     padding: 0.4rem 1rem;
     font-size: 1.8rem;
     border-radius: 0 0 2rem 2rem;
-    color: $color-text;
-    border: 2px solid $orange-dark;
+    color: $secondary;
+    border: 2px solid $primary;
     border-top: 0;
     background: rgba($color: #1a1c20, $alpha: 0.8);
     box-shadow: rgb(26, 28, 32, 0.4) 0px 8px 24px;
@@ -79,7 +79,7 @@ export default {
     }
     h3,
     p {
-      color: $color-text;
+      color: $secondary;
     }
   }
 

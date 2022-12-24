@@ -45,7 +45,7 @@ export default {
   gap: 0.5rem;
 
   &__message {
-    color: $color-text;
+    color: $secondary;
   }
   .heart-container {
     position: relative;
@@ -77,7 +77,7 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background-color: $orange-light;
+      background-color: $primary;
       opacity: 0;
       transform: scale(0);
       transition: transform 0.2s linear, opacity 0.2s linear;
@@ -94,7 +94,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    fill: $orange-light;
+    fill: $primary;
   }
 }
 

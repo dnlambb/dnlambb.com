@@ -14,13 +14,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../styles/colors.scss";
 
 .tooltip {
   width: fit-content;
   position: relative;
   font-family: 'Roboto', sans-serif;
   font-size: 2.6rem;
-  color: #f4f4f4;
+  color: $secondary;
   
   &:before,
   &:after {
@@ -46,7 +47,7 @@ export default {
     text-align: center;
     letter-spacing: 0.1rem;
     border-radius: 0.5rem;
-    border: 1px solid #f0a500;
+    border: 1px solid $primary;
     background: rgba($color: #1a1c20, $alpha: 0.6);
     backdrop-filter: blur(3px);
     transform: translateY(0.5rem);

@@ -25,7 +25,7 @@ export default {
 
 .education-card {
   width: 24rem;
-  border: 2px solid $orange-light;
+  border: 2px solid $primary;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ export default {
 
     h3,
     p {
-      color: $color-text;
+      color: $secondary;
     }
   }
 
