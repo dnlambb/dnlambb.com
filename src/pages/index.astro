@@ -65,6 +65,10 @@ const pinProjects = {
           </li>
         </Tooltip>
       </ul>
+			<div class="scroll-down-container">
+				<img class="down-arrow" src="/public/assets/down-arrow.svg" alt="down arrow">
+				<img class="down-arrow" src="/public/assets/down-arrow.svg" alt="down arrow">
+			</div>
     </section>
 		<section class="home-pin-projects">
 			<h3>Projects</h3>
@@ -80,12 +84,13 @@ const pinProjects = {
 @import "../styles/colors.scss";
 @import "../styles/text-glitch.scss";
 @import "../styles/button-primary.scss";
+@import "../styles/scroll-down.scss";
 main {
 	width: 100%;
 	.home-header {
 		width: 100%;
 		min-height: 100vh;
-		padding: 1.25rem;
+		padding: 2rem 1.25rem 1.25rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -129,9 +134,22 @@ main {
 				width: 50px;
 			}
 		}
+		.scroll-down-container {
+			margin: 1.25rem auto 0;
+			width: 100px;
+			height: 100px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.down-arrow {
+				position: absolute;
+				width: 50px;
+			}
+		}
 	}
 	.home-pin-projects {
 		text-align: center;
+		margin-top: 2rem;
 		padding: 0 1.25rem 3.125rem;
 		&__container-projects {
 			padding: 3.125rem 0;

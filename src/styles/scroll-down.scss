@@ -1,0 +1,29 @@
+.down-arrow {
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  &:nth-child(1) {
+    animation: scroll-down 2s ease-in-out infinite;
+  }
+  &:nth-child(2) {
+    animation: scroll-down 4s ease-in-out infinite;
+  }
+}
+
+
+@keyframes scroll-down {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
