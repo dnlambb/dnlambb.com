@@ -67,7 +67,7 @@ else {
 <header>
   <nav>
     <a href={currentHref} class="brand-link">
-      <img src="/assets/lamb.svg" alt="lamb icon with link to home page" />
+      <img src="/public/assets/lamb.svg" alt="lamb icon with link to home page" />
     </a>
     <a href={changeLanguage}>{language}</a>
     <MenuLinks links={links} />
@@ -78,13 +78,11 @@ else {
   @import "../styles/colors.scss";
 
   header {
-    position: fixed;
     z-index: 5;
     width: 100%;
     height: fit-content;
     padding: 0 1.25rem;
-    border-bottom: 1px solid rgba(244, 244, 244, 0.6);
-    background: rgba(26, 28, 32, 0.9);
+    border-bottom: 1px solid $primary;
 
     nav {
       width: 100%;
@@ -98,6 +96,7 @@ else {
         width: fit-content;
         height: fit-content;
         img {
+          height: 2.5rem;
           width: 2.5rem;
           background: $secondary;
           border-radius: 100%;
