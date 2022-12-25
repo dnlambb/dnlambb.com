@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "colors.scss",
     "404.astro",
-    "index.astro"
+    "index.astro",
+    "global.scss"
   ]
 }

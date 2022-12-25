@@ -1,0 +1,87 @@
+@import "./colors.scss";
+
+$font-title: 'Andika', sans-serif;
+$font-body: 'Chivo', sans-serif;
+
+$p-width: clamp(45ch, 50%, 75ch);
+$fs-sm: clamp(0.875rem, 0.8596491228070176rem + 0.08771929824561403vw, 1rem);
+$fs-md: clamp(1.125rem, 1.1019122807017543rem + 0.13192982456140348vw, 1.313rem);
+$fs-lg: clamp(1.25rem, 1.219298245614035rem + 0.17543859649122806vw, 1.5rem);
+$fs-xl: clamp(1.75rem, 1.6732456140350878rem + 0.43859649122807015vw, 2.375rem);
+$fs-xxl: clamp(2.375rem, 2.2982456140350878rem + 0.43859649122807015vw, 3rem);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*::selection {
+	color: $secondary;
+	background: $primary;
+}
+
+body {
+	background: $terciary;
+	font-family: $font-body;
+}
+
+h1 {
+	font-family: $font-title;
+	font-size: $fs-xxl;
+	font-weight: bold;
+}
+
+h2,
+h3,
+h4 {
+  font-family: $font-title;
+  font-weight: 500;
+	color: $secondary;
+}
+
+p,
+a,
+li,
+button,
+small {
+  font-size: $fs-md;
+  font-weight: 400;
+  font-family: $font-body;
+	color: $secondary;
+}
+
+p {
+	max-width: $p-width;
+}
+
+h2 {
+  font-size: $fs-xl;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: $fs-lg;
+}
+
+h4 {
+  font-size: $fs-lg;
+}
+
+code {
+	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f499;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}
