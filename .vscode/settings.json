@@ -3,6 +3,9 @@
     "colors.scss",
     "404.astro",
     "index.astro",
-    "global.scss"
+    "global.scss",
+    "Footer.astro",
+    "About.astro",
+    "settings.json"
   ]
 }
