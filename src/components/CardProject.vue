@@ -71,6 +71,7 @@ export default {
 
   &__content-container {
     width: 100%;
+    height: fit-content;
     padding: 0 0.875;
     text-align: center;
 
@@ -81,47 +82,58 @@ export default {
     p {
       color: $secondary;
     }
+    p {
+      margin: 0 auto;
+    }
   }
 
   &__button-container {
     display: flex;
     align-self: flex-end;
     justify-content: space-evenly;
-
+    
     a {
       margin-bottom: 2.5rem;
       text-decoration: none;
     }
   }
-  @media (max-width: 370px) {
-    .card-project {
-      &__button-container {
-        margin-top: 1.25rem;
-        flex-direction: column;
-        align-items: center;
-  
-        & a {
-          margin-bottom: 1.25rem;
-        }
+}
+@media (max-width: 370px) {
+  .card-project {
+    height: 450px;
+    &__content-container {
+      p {
+        padding: 0 0.625rem;
       }
     }
-  }
-  @media (min-width: 768px) {
-    .card-project {
-      &__content-container {
-        padding-left: 2.5rem;
-        text-align: start;
-
-        & a {
-          padding: 0 2.5rem;
-        }
+    &__button-container {
+      margin-top: 1.25rem;
+      flex-direction: column;
+      align-items: center;
+      & a {
+        margin-bottom: 1.25rem;
       }
-    }
-  }
-  @media (min-width: 1440px) {
-    .card-project__button-container a {
-      padding: 0.25rem 3.75rem;
     }
   }
 }
+@media (min-width: 768px) {
+  .card-project {
+    &__content-container {
+      padding-left: 2.5rem;
+      text-align: start;
+      p {
+        margin: 0;
+      }
+      & a {
+        padding: 0 2.5rem;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .card-project__button-container a {
+    padding: 0.25rem 3.75rem;
+  }
+}
+
 </style>
