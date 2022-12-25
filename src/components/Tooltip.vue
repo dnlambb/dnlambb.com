@@ -20,7 +20,7 @@ export default {
   width: fit-content;
   position: relative;
   font-family: 'Roboto', sans-serif;
-  font-size: 2.6rem;
+  font-size: calculateRem(26px);
   color: $secondary;
   
   &:before,
@@ -31,31 +31,31 @@ export default {
     transition: all 0.4s ease;
   }
   &:before {
-    top: -1.5rem;
-    transform: translateY(0.5rem);
+    top: -24px;
+    transform: translateY(8px);
   }
   &:after {
     content: attr(string-tooltip);
-    top: -4rem;
+    top: -50px;
     left: 0;
-    min-width: 4rem;
+    min-width: 40px;
     max-width: max-content;
     height: fit-content;
-    padding: 1rem;
-    font-size: 1.4rem;
+    padding: 10px;
+    font-size: calculateRem(14px);
     font-weight: 400;
     text-align: center;
-    letter-spacing: 0.1rem;
-    border-radius: 0.5rem;
+    letter-spacing: calculateRem(1.6px);
+    border-radius: 8px;
     border: 1px solid $primary;
     background: rgba($color: #1a1c20, $alpha: 0.6);
     backdrop-filter: blur(3px);
-    transform: translateY(0.5rem);
+    transform: translateY(8px);
   }
   &:hover::before,
   &:hover::after {
    opacity: 1;
-   transform: translateY(-0.5rem);
+   transform: translateY(-0.5px);
   }
 }
 </style>

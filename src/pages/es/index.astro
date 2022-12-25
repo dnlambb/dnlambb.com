@@ -80,82 +80,83 @@ const pinProjects = {
 @import "../../styles/text-glitch.scss";
 @import "../../styles/button-primary.scss";
 main {
-  width: 100%;
-  .home-header {
-    width: 100%;
-    min-height: 100vh;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: url("/public/assets/wave.svg") no-repeat center;
-    background-size: cover;
-    .order-reverse-items {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    h1 {
-      width: fit-content;
-      margin: 0 auto;
-      text-align: center;
-      color: $primary;
-      user-select: none;
-    }
-    h2 {
-      width: fit-content;
-      margin: 1rem auto 3rem;
-      text-align: center;
-      color: $primary;
-    }
-    p {
-      text-align: center;
-      line-height: 1.6;
-    }
-    .link-card-grid {
-      width: fit-content;
-      margin: 5.5rem auto;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .list-social {
-      width: fit-content;
-      margin: 0 auto;
-      list-style: none;
-      display: flex;
-      gap: 3rem;
-      img {
-        width: 5rem;
-      }
-    }
-  }
-  .home-pin-projects {
-    text-align: center;
-    padding: 0 2rem 5rem;
-    &__container-projects {
-      padding: 5rem 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-  }
+	width: 100%;
+	.home-header {
+		width: 100%;
+		min-height: 100vh;
+		padding: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background: url("/public/assets/wave.svg") no-repeat center;
+		background-size: cover;
+		.order-reverse-items {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+		h1 {
+			width: fit-content;
+			margin: 0 auto;
+			text-align: center;
+			color: $primary;
+			user-select: none;
+		}
+		h2 {
+			width: fit-content;
+			margin: 0.625rem auto 1.875rem;
+			text-align: center;
+			color: $primary;
+		}
+		p {
+			margin: 0 auto;
+			text-align: center;
+			line-height: 1.6;
+		}
+		.link-card-grid {
+			width: fit-content;
+			margin: 3.438rem auto;
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+		}
+		.list-social {
+			width: fit-content;
+			margin: 0 auto;
+			list-style: none;
+			display: flex;
+			gap: 1.875rem;
+			img {
+				width: 50px;
+			}
+		}
+	}
+	.home-pin-projects {
+		text-align: center;
+		padding: 0 1.25rem 3.125rem;
+		&__container-projects {
+			padding: 3.125rem 0;
+			display: flex;
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+	}
 }
 @media (min-width: 440px) {
-  main {
-    .home-header {
-      h1 {
-        letter-spacing: 1rem;
-      }
-    }
-  }
+	main {
+		.home-header {
+			h1 {
+				letter-spacing: 0.625rem;
+			}
+		}
+	}
 }
 @media (min-width: 1024px) {
-  main {
-    .home-pin-projects {
-      &__container-projects {
-        flex-direction: row;
-      }
-    }
-  }
+	main {
+		.home-pin-projects {
+			&__container-projects {
+				flex-direction: row;
+			}
+		}
+	}
 }
 </style>
   

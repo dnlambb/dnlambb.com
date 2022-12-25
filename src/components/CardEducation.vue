@@ -24,9 +24,9 @@ export default {
 @import "../styles/colors.scss";
 
 .education-card {
-  width: 24rem;
+  width: 240px;
   border: 2px solid $primary;
-  border-radius: 1rem;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -34,13 +34,13 @@ export default {
   &__text-container {
     width: 100%;
     height: 60%;
-    padding: 2rem;
+    padding: 1.25rem;
     text-align: center;
     grid-area: text;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 2rem;
+    gap: 1.25rem;
 
     h3,
     p {
@@ -60,8 +60,8 @@ export default {
 }
 @media (min-width: 1300px) {
   .education-card {
-    width: 60rem;
-    min-height: 20rem;
+    width: 600px;
+    min-height: 200px;
     display: grid;
     grid-template-columns: 1fr 40%;
     grid-template-areas: "text img";

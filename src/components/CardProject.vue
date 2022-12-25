@@ -46,8 +46,8 @@ export default {
 
 .card-project {
   width: 100%;
-  height: 40rem;
-  border-radius: 0.8rem;
+  height: 400px;
+  border-radius: 8px;
   border: 2px solid $primary;
   background: $terciary;
   display: grid;
@@ -58,9 +58,9 @@ export default {
   &__tech-tag {
     width: fit-content;
     height: fit-content;
-    padding: 0.4rem 1rem;
-    font-size: 1.8rem;
-    border-radius: 0 0 2rem 2rem;
+    padding: 0.25rem 0.625rem;
+    font-size: calculateRem(18px);
+    border-radius: 0 0 20px 20px;
     color: $secondary;
     border: 2px solid $primary;
     border-top: 0;
@@ -71,11 +71,11 @@ export default {
 
   &__content-container {
     width: 100%;
-    padding: 0 1.4rem;
+    padding: 0 0.875;
     text-align: center;
 
     h3 {
-      margin: 1rem 0 2rem;
+      margin: 0.625rem 0 1.25rem;
     }
     h3,
     p {
@@ -89,19 +89,19 @@ export default {
     justify-content: space-evenly;
 
     a {
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
       text-decoration: none;
     }
   }
   @media (max-width: 370px) {
     .card-project {
       &__button-container {
-        margin-top: 2rem;
+        margin-top: 1.25rem;
         flex-direction: column;
         align-items: center;
   
         & a {
-          margin-bottom: 2rem;
+          margin-bottom: 1.25rem;
         }
       }
     }
@@ -109,18 +109,18 @@ export default {
   @media (min-width: 768px) {
     .card-project {
       &__content-container {
-        padding-left: 4rem;
+        padding-left: 2.5rem;
         text-align: start;
 
         & a {
-          padding: 0 4rem;
+          padding: 0 2.5rem;
         }
       }
     }
   }
   @media (min-width: 1440px) {
     .card-project__button-container a {
-      padding: 0.4rem 6rem;
+      padding: 0.25rem 3.75rem;
     }
   }
 }

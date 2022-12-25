@@ -38,13 +38,14 @@ export default {
 
 .message-container {
   width: fit-content;
-  margin: 4rem auto 0;
+  margin: 2.5rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.313rem;
 
   &__message {
+    width: fit-content;
     color: $secondary;
   }
   .heart-container {

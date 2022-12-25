@@ -1,3 +1,5 @@
+@import "./calculate-rem.scss";
+
 $slice-0: inset(50% 50% 50% 50%);
 $slice-1: inset(80% -6px 0 0);
 $slice-2: inset(50% -6px 30% 0);
@@ -10,11 +12,11 @@ $slice-5: inset(80% -6px 5% 0);
   &:after {
     margin: 0 auto;
     position: relative;
-    padding: 0.4rem 4rem;
-    border-radius: 0.2rem;
+    padding: calculateRem(4px) calculateRem(40px);
+    border-radius: 2px;
     border: 1px solid $primary;
     font-weight: 500;
-    letter-spacing: 0.3rem;
+    letter-spacing: calculateRem(3px);
     text-decoration: none;
     color: $secondary;
     background: $terciary;
