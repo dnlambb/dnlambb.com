@@ -9,11 +9,13 @@ const { heading, randomFacts } = Astro.props;
 <section>
   <h3>{heading}</h3>
   <ul>
-    <li><img src="/assets/randomFacts/dog.svg" alt="dog" />{randomFacts.item1}</li>
-    <li><img src="/assets/randomFacts/coffee.svg" alt="coffee" />{randomFacts.item2}</li>
     <li>
-      <img src="/assets/randomFacts/volleyball.svg" alt="ball of volleyball" />
-      {randomFacts.item3}
+      <img src="/assets/randomFacts/book.png" alt="dog" />
+      {randomFacts.item1}
+    </li>
+    <li>
+      <img src="/assets/randomFacts/volleyball.png" alt="ball of volleyball" />
+      {randomFacts.item2}
     </li>
   </ul>
 </section>
