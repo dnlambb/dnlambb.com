@@ -1,39 +1,57 @@
 ---
+import Tooltip from './Tooltip.vue';
 export interface Props{
-  message: string
+  about: string,
+  btnText: string
 }
-const { message } = Astro.props;
+const { about, btnText } = Astro.props;
 ---
 
 <section>
-  <img src="/assets/profile.png" alt="profile image of me" />
+  <img class="profile" src="/public/assets/profile.png" alt="profile image of me" />
   <p>
-    { message }
+    { about }
   </p>
+  <a href="/public/assets/cv-frontend.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
+  <Tooltip string-tooltip="Linkedin">
+    <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
+      <img src="/assets/social/linkedin.svg" alt="Linkedin">
+    </a>
+  </Tooltip>
 </section>
 <style lang="scss">
   @import "../styles/colors.scss";
   @import "../styles/button-primary.scss";
 
   section {
-    max-width: 60rem;
-    margin: 2.5rem auto 5rem;
-    padding: 0 1.25rem;
+    max-width: 37.5rem;
+    margin: 5rem auto;
+    padding: 2rem 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.875rem;
-
-    img {
+    border-radius: 40px;
+    background: linear-gradient(145deg, #17191d, #1c1e22);
+    box-shadow:  40px 40px 0px #181a1d, -40px -40px 0px #1c1e23;
+    .profile {
       width: 200px;
       margin: 0 auto;
-      border-radius: 100%;
       object-fit: cover;
-      border: 2px solid $secondary;
+      border-radius: 100%;
     }
-
     p {
+      margin: 0 auto;
       line-height: 1.875rem;
       text-align: center;
+    }
+    span {
+      margin: 0 auto;
+      .linkedin {
+        width: fit-content;
+        img {
+          width: 50px;
+        }
+      }
     }
   }
   @media (min-width: 425px) {
@@ -43,23 +61,31 @@ const { message } = Astro.props;
       }
     }
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
     section {
-      max-width: 100%;
-      place-content: center;
+      max-width: fit-content;
       display: grid;
-      grid-template-columns: 18.75rem 37.5rem;
+      place-content: center;
+      align-items: center;
+      grid-template-columns: 18.75rem 18.75rem 18.75rem;
       grid-template-areas:
-        "img text"
-        "img text";
+        "img text text"
+        "img text text"
+        "img button linkedin";
       gap: 1.25rem 0;
-      img {
+      .profile {
         grid-area: img;
         width: 220px;
       }
       p {
         grid-area: text;
         align-self: center;
+      }
+      .resume {
+        grid-area: button;
+      }
+      .linkedin {
+        grid-area: linkedin;
       }
     }
   }
