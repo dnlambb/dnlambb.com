@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "settings.json",
+    "README.md",
     "index.astro",
     "projects.astro",
     "contact.astro",
