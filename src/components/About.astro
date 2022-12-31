@@ -8,11 +8,11 @@ const { about, btnText } = Astro.props;
 ---
 
 <section>
-  <img class="profile" src="/public/assets/profile.png" alt="profile image of me" />
+  <img class="profile" src="/assets/profile.png" alt="profile image of me" />
   <p>
     { about }
   </p>
-  <a href="/public/assets/cv-frontend.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
+  <a href="/assets/cv-frontend.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
   <div class="social-container">
     <Tooltip stringTooltip="Linkedin">
       <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
