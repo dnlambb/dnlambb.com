@@ -13,11 +13,18 @@ const { about, btnText } = Astro.props;
     { about }
   </p>
   <a href="/public/assets/cv-frontend.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
-  <Tooltip string-tooltip="Linkedin">
-    <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
-      <img src="/assets/social/linkedin.svg" alt="Linkedin">
-    </a>
-  </Tooltip>
+  <div class="social-container">
+    <Tooltip stringTooltip="Linkedin">
+      <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
+        <img src="/assets/social/linkedin.svg" alt="Linkedin">
+      </a>
+    </Tooltip>
+    <Tooltip stringTooltip="GitHub">
+      <a class="github" href="https://github.com/dnlambb">
+        <img src="/assets/social/github.svg" alt="GitHub">
+      </a>
+    </Tooltip>
+  </div>
 </section>
 <style lang="scss">
   @import "../styles/colors.scss";
@@ -28,6 +35,7 @@ const { about, btnText } = Astro.props;
     margin: 5rem auto;
     padding: 2rem 1.25rem;
     display: flex;
+    place-items: center;
     flex-direction: column;
     gap: 1.875rem;
     border-radius: 40px;
@@ -44,9 +52,10 @@ const { about, btnText } = Astro.props;
       line-height: 1.875rem;
       text-align: center;
     }
-    span {
-      margin: 0 auto;
-      .linkedin {
+    .social-container {
+      display: flex;
+      gap: 1.25rem;
+      :is(.linkedin, .github) {
         width: fit-content;
         img {
           width: 50px;
@@ -71,7 +80,7 @@ const { about, btnText } = Astro.props;
       grid-template-areas:
         "img text text"
         "img text text"
-        "img button linkedin";
+        "img button social";
       gap: 1.25rem 0;
       .profile {
         grid-area: img;
@@ -84,8 +93,8 @@ const { about, btnText } = Astro.props;
       .resume {
         grid-area: button;
       }
-      .linkedin {
-        grid-area: linkedin;
+      .social-container {
+        grid-area: social;
       }
     }
   }
