@@ -11,7 +11,23 @@ describe('Testing Error Page', () => {
     cy.get('h2').contains('It seems')
   })
 
-  it('load, hover, click btn go home', () => {
-    cy.get('a.button-primary').trigger('mouseover').click()
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
   })
+
+  it('click btn go home', () => {
+    cy.get('a.button-primary').click()
+    .request({
+      url: '/',
+      failOnStatusCode: false
+    })
+    cy.title().should('include', 'Daniel Cordero • @dnlambb')
+  })
+
 })

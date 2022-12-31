@@ -1,41 +1,41 @@
-describe("Visit Projects EN Page", () => {
+describe("Visit Work EN Page", () => {
   it("visit page", () => {
-    cy.visit("/projects");
-    cy.title().should('include', 'Daniel Cordero • Projects')
+    cy.visit("/work");
+    cy.title().should('include', 'Daniel Cordero • Works')
   });
 
   it("load heading", () => {
-    cy.get("h1").contains("Projects");
+    cy.get("h1").contains("Work");
   });
 
   it("load card project", () => {
     cy.get(".card-project").contains("Fylo");
   });
 
-  it("load btn code", () => {
-    cy.get(".button-primary");
-    cy.get('[href="https://github.com/dnlambb/fylo-landing-page"]');
-  });
+  it('find broken links button', () => {
+    cy.get('.button-primary').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
+  })
 
-  it("load btn web", () => {
-    cy.get(".button-primary");
-    cy.get('[href="https://dnlambb.github.io/fylo-landing-page/"]');
-  });
-
-  it("load btn more projects", () => {
-    cy.get(".button-primary");
-    cy.get('[href="https://github.com/dnlambb?tab=repositories"]');
-  });
-
-  it("load footer", () => {
-    cy.get(".license a");
-    cy.get('[href="http://creativecommons.org/licenses/by-nc-sa/4.0/"]');
-  });
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
+  })
 });
 
-describe("Visit Projects ES Page", () => {
+describe("Visit Work ES Page", () => {
   it("visit page", () => {
-    cy.visit("/es/projects");
+    cy.visit("/es/work");
     cy.title().should('include', 'Daniel Cordero • Proyectos')
   });
 
@@ -47,23 +47,23 @@ describe("Visit Projects ES Page", () => {
     cy.get(".card-project").contains("Fylo");
   });
 
-  it("load btn code", () => {
-    cy.get(".button-primary");
-    cy.get('[href="https://github.com/dnlambb/fylo-landing-page"]');
-  });
-
-  it("load btn web", () => {
-    cy.get(".button-primary");
-    cy.get('[href="https://dnlambb.github.io/fylo-landing-page/"]');
-  });
-
-  it("load btn more projects", () => {
-    cy.get(".button-primary");
-    cy.get('[href="https://github.com/dnlambb?tab=repositories"]');
-  });
-
-  it("load footer", () => {
-    cy.get(".license a");
-    cy.get('[href="http://creativecommons.org/licenses/by-nc-sa/4.0/"]');
-  });
+  it('find broken links button', () => {
+    cy.get('.button-primary').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
+  })
+  
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
+  })
 });

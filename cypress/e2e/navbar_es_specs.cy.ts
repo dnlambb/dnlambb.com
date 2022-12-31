@@ -11,12 +11,9 @@ describe('Testing Navbar Home ES Page', () => {
   it('load hrefs of links', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
-    cy.get('[href="/es/projects"]')
+    cy.get('[href="/es/work"]')
     cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
-  })
-  it('hover navbar links', () => {
-    cy.get('.list-links li a:first').trigger('mouseover')
   })
   it('click navbar links', () => {
     cy.get('.list-links li a:last').click()
@@ -36,21 +33,18 @@ describe('Testing Navbar About ES Page', () => {
   it('load hrefs of links', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
-    cy.get('[href="/es/projects"]')
+    cy.get('[href="/es/work"]')
     cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
-  })
-  it('hover navbar links', () => {
-    cy.get('.list-links li a:last').trigger('mouseover')
   })
   it('click navbar links', () => {
     cy.get('.list-links li a:last').click()
   })
 })
 
-describe('Testing Navbar Projects ES Page', () => {
-  it('visit projects page', () => {
-    cy.visit('/es/projects')
+describe('Testing Navbar Work ES Page', () => {
+  it('visit work page', () => {
+    cy.visit('/es/work')
   })
   it('load brand-link', () => {
     cy.get('.brand-link').get('[href="/es"]:first')
@@ -61,12 +55,9 @@ describe('Testing Navbar Projects ES Page', () => {
   it('load hrefs of links', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
-    cy.get('[href="/es/projects"]')
+    cy.get('[href="/es/work"]')
     cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
-  })
-  it('hover navbar links', () => {
-    cy.get('.list-links li a:last').trigger('mouseover')
   })
   it('click navbar links', () => {
     cy.get('.list-links li a:last').click()
@@ -86,12 +77,9 @@ describe('Testing Navbar Contact ES Page', () => {
   it('load hrefs of links', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
-    cy.get('[href="/es/projects"]')
+    cy.get('[href="/es/work"]')
     cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
-  })
-  it('hover navbar links', () => {
-    cy.get('.list-links li a:last').trigger('mouseover')
   })
   it('click navbar links', () => {
     cy.get('.list-links li a:last').click()

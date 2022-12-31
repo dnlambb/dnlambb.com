@@ -6,13 +6,29 @@ describe('Visit Education EN Page', () => {
   it('load heading', () => {
     cy.get('h1').contains('Education')
   })
-  it('load navbar', () => {
-    cy.get('.list-links li a').contains('Education')
-    cy.get('[href="/education"]')
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
   })
-  it('load education card', () => {
-    cy.get('.education-card').contains('Inacap').get('img')
-    cy.get('[src="/assets/education/inacap.png"]')
+  it('find broken src image', () => {
+    cy.get('img').each(src => {
+      if (src.prop('src'))
+        cy.request({
+          url: src.prop('src'),
+          failOnStatusCode: false
+        })
+    })
+  })
+  it('find img not visible', () => {
+    cy.get('img')
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
   })
 })
 
@@ -24,12 +40,28 @@ describe('Visit Education ES Page', () => {
   it('load heading', () => {
     cy.get('h1').contains('Educación')
   })
-  it('load navbar', () => {
-    cy.get('.list-links li a').contains('Educación')
-    cy.get('[href="/es/education"]')
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
   })
-  it('load education card', () => {
-    cy.get('.education-card').contains('Inacap').get('img')
-    cy.get('[src="/assets/education/inacap.png"]')
+  it('find broken src image', () => {
+    cy.get('img').each(src => {
+      if (src.prop('src'))
+        cy.request({
+          url: src.prop('src'),
+          failOnStatusCode: false
+        })
+    })
+  })
+  it('find img not visible', () => {
+    cy.get('img')
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
   })
 })

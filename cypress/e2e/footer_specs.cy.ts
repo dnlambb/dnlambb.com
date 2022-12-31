@@ -43,7 +43,7 @@ describe('Testing Footer About Page', () => {
 
 describe('Testing Footer Projects Page', () => {
   it('visit page', () => {
-    cy.visit('/projects')
+    cy.visit('/work')
   })
   
   it('load message', () => {
