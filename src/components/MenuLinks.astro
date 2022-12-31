@@ -4,94 +4,89 @@ export interface Props {
 }
 const { links } = Astro.props;
 ---
-<input id="menu-checkbox" type="checkbox" />
-<label class="menu-icon-container" for="menu-checkbox">
-  <img class="icon" src="/assets/menu.svg" alt="menu icon" />
-</label>
-<ul class="list-links">
-  <li><a href={links.home.href}>{links.home.text}</a></li>
-  <li><a href={links.about.href}>{links.about.text}</a></li>
-  <li><a href={links.projects.href}>{links.projects.text}</a></li>
-  <li><a href={links.education.href}>{links.education.text}</a></li>
-  <li><a href={links.contact.href}>{links.contact.text}</a></li>
-</ul>
+<div class="menu-container">
+  <input id="menu-checkbox" type="checkbox" />
+  <label class="menu-icon-container" for="menu-checkbox">
+    <img class="icon" src="/assets/menu.svg" alt="menu icon" />
+  </label>
+  <ul class="list-links">
+    <li><a href={links.home.href}>{links.home.text}</a></li>
+    <li><a href={links.about.href}>{links.about.text}</a></li>
+    <li><a href={links.projects.href}>{links.projects.text}</a></li>
+    <li><a href={links.education.href}>{links.education.text}</a></li>
+    <li><a href={links.contact.href}>{links.contact.text}</a></li>
+  </ul>
+</div>
 
 <style lang="scss">
-  @import "../styles/colors.scss";
+@import "../styles/colors.scss";
 
-  .list-links {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    & > li {
-      margin: 0 1rem;
-      overflow: hidden;
-    }
-    & li a {
-      text-decoration: none;
-    }
-    & a:is(:hover, :active) {
-      color: $orange-light;
-    }
+.list-links {
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  & > li {
+    margin: 0 0.625rem;
+    overflow: hidden;
   }
+  & li a {
+    text-decoration: none;
+  }
+  & a:is(:hover, :active) {
+    color: $primary;
+  }
+}
 
+.menu-icon-container {
+  height: 100%;
+  width: fit-content;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+#menu-checkbox {
+  display: none;
+}
+@media (max-width: 920px) {
   .menu-icon-container {
-    height: 100%;
+    display: block;
+  }
+  .list-links {
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    top: 70px;
+    right: 50px;
+    width: 200px;
+    border-radius: 20px;
+    opacity: 0.2;
+    background-color: $terciary;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+  #menu-checkbox:checked ~ .list-links {
+    visibility: visible;
+    padding: 1rem 0;
+    border: 1px solid $secondary;
+    opacity: 1;
+    transform: translateY(10px);
+    transition: ease-in-out 400ms;
+  }
+  .list-links > li {
+    display: block;
     width: fit-content;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    .icon {
-      width: 4.5rem;
-    }
+    height: fit-content;
+    margin: 0 auto;
+    padding: 0.625rem;
+    color: $secondary;
   }
-
-  #menu-checkbox {
-    display: none;
-  }
-
-  @media (max-width: 700px) {
-    .menu-icon-container {
-      display: flex;
-    }
-    .list-links {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      margin-top: 50px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    #menu-checkbox ~ .list-links li {
-      height: 0;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    #menu-checkbox:checked ~ .list-links li {
-      height: 2.5em;
-      padding: 0.5em;
-      border: 1px solid #292D33;
-      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .list-links > li {
-      width: 100%;
-      margin: 0;
-      padding: 0.5em 0;
-      color: $color-text;
-      display: flex;
-      justify-content: center;
-      background-color: #1A1C20;
-    }
-    .list-links > li:not(:last-child) {
-      border-bottom: 1px solid #292D33;
-    }
-  }
+}
 </style>

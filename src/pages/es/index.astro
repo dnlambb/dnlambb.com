@@ -1,6 +1,27 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import CardLink from "../../components/CardLink.astro";
+import Tooltip from "../../components/Tooltip.vue";
+import CardProject from "../../components/CardProject.vue";
+
+const pinProjects = {
+  FyloLanding: {
+    tag: "Html - Sass",
+    title: "Fylo Landing Page",
+    desc: "Construcción de una landing page para el reto de Frontend Mentor",
+    urlImg: "/assets/projects/fylo-landing.jpg",
+    urlRepo: "https://github.com/dnlambb/fylo-landing-page",
+    urlWeb: "https://dnlambb.github.io/fylo-landing-page/",
+  },
+  ApiIp: {
+    tag: "JS - Pico.css",
+    title: "API IP",
+    desc: "Consumir una API para devolver la información del proveedor de IP",
+    urlImg: "/assets/projects/api-ip.png",
+    urlRepo: "https://github.com/dnlambb/API-IP",
+    urlWeb: "https://dnlambb.github.io/API-IP/",
+  },
+}
 ---
 
 <MainLayout
@@ -9,15 +30,12 @@ import CardLink from "../../components/CardLink.astro";
   description="Hola, soy Daniel Cordero, Frontend Developer. Chile."
 >
   <main>
-    <section>
+    <section class="home-header">
       <div class="order-reverse-items">
         <h1 class="text-glitch" text-glitch="Daniel Cordero">Daniel Cordero</h1>
-        <p>Hola, yo soy</p>
+        <p>Hola, soy</p>
       </div>
-      <p>
-        Este es mi sitio web personal.<br />
-        Aquí puedes conocer sobre mí, mis proyectos, mi educación, certificados y como contactarme.
-      </p>
+      <h2>Desarrollador Frontend</h2>
       <ul role="list" class="link-card-grid">
         <CardLink
           href="https://github.com/dnlambb/dnlambb.com"
@@ -25,71 +43,135 @@ import CardLink from "../../components/CardLink.astro";
           body="El repositorio de este sitio web en GitHub."
         />
       </ul>
+      <ul class="list-social">
+        <Tooltip stringTooltip="GitHub">
+          <li>
+            <a href="https://github.com/dnlambb">
+              <img src="/assets/social/github.svg" alt="Github" />
+            </a>
+          </li>
+        </Tooltip>
+        <Tooltip stringTooltip="Linkedin">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/"
+            >
+              <img src="/assets/social/linkedin.svg" alt="Linkedin" />
+            </a>
+          </li>
+        </Tooltip>
+      </ul>
+			<div class="scroll-down-container">
+				<img class="down-arrow" src="/public/assets/down-arrow.svg" alt="down arrow">
+				<img class="down-arrow" src="/public/assets/down-arrow.svg" alt="down arrow">
+			</div>
     </section>
+    <section class="home-pin-projects">
+			<h3>Proyectos</h3>
+			<div class="home-pin-projects__container-projects">
+				<CardProject project={pinProjects}/>
+			</div>
+			<a href="/es/work" class="button-primary" button-glitch="Vertodos">Ver todos</a>
+		</section>
   </main>
 </MainLayout>
 
 <style lang="scss">
-  @import "../../styles/colors.scss";
-  @import "../../styles/text-glitch.scss";
-  main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("/public/assets/wavesBgMobile.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    section {
-      width: fit-content;
-      padding: 2rem;
-      .order-reverse-items {
-        display: flex;
-        flex-direction: column-reverse;
-      }
-      h1 {
-        width: fit-content;
-        margin: 0 auto;
-        text-align: center;
-        letter-spacing: 1rem;
-        color: $orange-light;
-        user-select: none;
-      }
-      p {
-        margin-top: 6rem;
-        text-align: center;
-        line-height: 1.6;
-      }
-      .link-card-grid {
-        width: fit-content;
-        margin: 8rem auto 0;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-      }
-    }
-  }
-  @media (min-width: 768px) {
-    main {
-      background: url("/public/assets/wavesBgTablet.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      section {
-        .link-card-grid {
-          width: fit-content;
-          margin-top: 8rem;
-        }
-      }
-    }
-  }
-  @media (min-width: 1024px) {
-    main {
-      background: url("/public/assets/wavesBgDesktop.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-  }
+@import "../../styles/colors.scss";
+@import "../../styles/text-glitch.scss";
+@import "../../styles/button-primary.scss";
+@import "../../styles/scroll-down.scss";
+main {
+	width: 100%;
+	.home-header {
+		width: 100%;
+		min-height: 100vh;
+		padding: 8rem 1.25rem 1.25rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background: url("/public/assets/wave.svg") no-repeat center;
+		background-size: cover;
+		.order-reverse-items {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+		h1 {
+			width: fit-content;
+			margin: 0 auto;
+			text-align: center;
+			color: $primary;
+			user-select: none;
+		}
+		h2 {
+			width: fit-content;
+			margin: 0.625rem auto;
+			text-align: center;
+			color: $primary;
+		}
+		p {
+			margin: 0 auto;
+			text-align: center;
+			line-height: 1.6;
+		}
+		.link-card-grid {
+			width: fit-content;
+			margin: 3.438rem auto;
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+		}
+		.list-social {
+			width: fit-content;
+			margin: 0 auto;
+			list-style: none;
+			display: flex;
+			gap: 1.875rem;
+			img {
+				width: 50px;
+			}
+		}
+		.scroll-down-container {
+			margin: 1.25rem auto 0;
+			width: 100px;
+			height: 100px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.down-arrow {
+				position: absolute;
+				width: 50px;
+			}
+		}
+	}
+	.home-pin-projects {
+		text-align: center;
+		margin-top: 2rem;
+		padding: 0 1.25rem 3.125rem;
+		&__container-projects {
+			padding: 3.125rem 0;
+			display: flex;
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+	}
+}
+@media (min-width: 440px) {
+	main {
+		.home-header {
+			h1 {
+				letter-spacing: 0.625rem;
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
+	main {
+		.home-pin-projects {
+			&__container-projects {
+				flex-direction: row;
+			}
+		}
+	}
+}
 </style>
+  

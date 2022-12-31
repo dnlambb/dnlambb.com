@@ -5,9 +5,8 @@ import Knowledge from "../../components/Knowledge.astro";
 import RandomFacts from "../../components/RandomFacts.astro";
 
 const randomFacts = {
-  item1: "Me gustan los perros",
-  item2: "Me gusta el café",
-  item3: "Amo el voleibol",
+  item1: "Me gusta leer",
+  item2: "Amo el voleibol",
 }
 ---
 
@@ -19,7 +18,8 @@ const randomFacts = {
   <main>
     <h1>Sobre mí</h1>
     <About
-      message="Soy un desarrollador junior de Chile. Actualmente, estudio Analista Programador en la universidad Inacap. En mi tiempo libre desarrollo proyectos personales y estudio como autodidacta. Mi objetivo actual es trabajar como desarrollador y ganar experiencia, ampliando mis conocimientos."
+      about="Soy un desarrollador Frontend. Me centro en la construcción de páginas webs. Me apasiona programar. Ahora me encuentro estudiando Analista programador en la universidad Inacap. Y también disfruto formándome de manera autodidacta."
+      btnText="Currículum"
     />
     <RandomFacts
       heading="Datos random sobre mí"
@@ -33,15 +33,13 @@ const randomFacts = {
 </MainLayout>
 
 <style lang="scss">
-  @import "../../styles/colors.scss";
-
-  main {
-    width: 100%;
-    padding: 10rem 2rem;
-
-    h1 {
-      text-align: center;
-      color: $orange-light;
-    }
+@import "../../styles/colors.scss";
+main {
+  width: 100%;
+  padding: 8rem 1.25rem 6.25rem;
+  h1 {
+    text-align: center;
+    color: $primary;
   }
+}
 </style>

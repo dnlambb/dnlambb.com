@@ -13,46 +13,48 @@ const { heading, headingOther } = Astro.props;
   <div class="frontend-container">
     <h3>Frontend</h3>
     <div class="img-container">
-      <Tooltip string-tooltip="Html">
+      <Tooltip stringTooltip="HTML">
         <img src="/assets/knowledge/html.svg" alt="Html">
       </Tooltip>
-      <Tooltip string-tooltip="Css">
-        <img src="/assets/knowledge/css.svg" alt="Css">
+      <Tooltip stringTooltip="CSS">
+        <img src="/assets/knowledge/css.svg" alt="CSS">
       </Tooltip>
-      <Tooltip string-tooltip="JavaScript">
+      <Tooltip stringTooltip="JavaScript">
         <img src="/assets/knowledge/javascript.svg" alt="JavaScript">
       </Tooltip>
-      <Tooltip string-tooltip="Sass">
-        <img src="/assets/knowledge/sass.svg" alt="Sass">
-      </Tooltip>
-      <Tooltip string-tooltip="Bootstrap">
-        <img src="/assets/knowledge/bootstrap.svg" alt="Bootstrap">
-      </Tooltip>
-      <Tooltip string-tooltip="React">
+      <Tooltip stringTooltip="React">
         <img src="/assets/knowledge/react.svg" alt="React">
       </Tooltip>
-      <Tooltip string-tooltip="Vue">
+      <Tooltip stringTooltip="Vue">
         <img src="/assets/knowledge/vue.svg" alt="Vue">
       </Tooltip>
-      <Tooltip string-tooltip="Astro">
+      <Tooltip stringTooltip="Tailwind">
+        <img src="/assets/knowledge/tailwindcss.svg" alt="Tailwind">
+      </Tooltip>
+      <Tooltip stringTooltip="Sass">
+        <img src="/assets/knowledge/sass.svg" alt="Sass">
+      </Tooltip>
+      <Tooltip stringTooltip="Bootstrap">
+        <img src="/assets/knowledge/bootstrap.svg" alt="Bootstrap">
+      </Tooltip>
+      <Tooltip stringTooltip="Astro">
         <img src="/assets/knowledge/astro.svg" alt="Astro">
       </Tooltip>
-
     </div>
   </div>
   <div class="backend-container">
     <h3>Backend</h3>
     <div class="img-container">
-      <Tooltip string-tooltip="MySQL">
+      <Tooltip stringTooltip="MySQL">
         <img src="/assets/knowledge/mysql.svg" alt="MySQL">
       </Tooltip>
-      <Tooltip string-tooltip="Oracle">
+      <Tooltip stringTooltip="Oracle">
         <img src="/assets/knowledge/oracle.svg" alt="Oracle">
       </Tooltip>
-      <Tooltip string-tooltip="Mongodb">
+      <Tooltip stringTooltip="Mongodb">
         <img src="/assets/knowledge/mongodb.svg" alt="Mongodb">
       </Tooltip>
-      <Tooltip string-tooltip="Python">
+      <Tooltip stringTooltip="Python">
         <img src="/assets/knowledge/python.svg" alt="Python">
       </Tooltip>
     </div>
@@ -60,16 +62,16 @@ const { heading, headingOther } = Astro.props;
   <div class="others-container">
     <h3>{headingOther}</h3>
     <div class="img-container">
-      <Tooltip string-tooltip="Git">
+      <Tooltip stringTooltip="Git">
         <img src="/assets/knowledge/git.svg" alt="Git">
       </Tooltip>
-      <Tooltip string-tooltip="GitHub">
+      <Tooltip stringTooltip="GitHub">
         <img src="/assets/knowledge/github.svg" alt="GitHub">
       </Tooltip>
-      <Tooltip string-tooltip="NPM">
+      <Tooltip stringTooltip="NPM">
         <img src="/assets/knowledge/npm.svg" alt="Npm">
       </Tooltip>
-      <Tooltip string-tooltip="Cypress">
+      <Tooltip stringTooltip="Cypress">
         <img src="/assets/knowledge/cypress.svg" alt="Cypress">
       </Tooltip>
     </div>
@@ -80,11 +82,11 @@ const { heading, headingOther } = Astro.props;
 @import "../styles/colors.scss";
 
 section {
-  max-width: 80rem;
-  margin: 8rem auto 0;
-  padding: 0 2rem;
+  max-width: 800px;
+  margin: 5rem auto 0;
+  padding: 0 1.25rem;
   h2 {
-    color: $orange-light;
+    color: $primary;
     text-align: center;
   }
   .frontend-container,
@@ -94,15 +96,15 @@ section {
 
     h3 {
       text-align: center;
-      margin: 4rem 0;
+      margin: 2.5rem 0;
     }
     .img-container {
       display: grid;
       place-content: center;
       grid-template-columns: repeat(2, auto);
-      gap: 2rem;
+      gap: 1.25rem;
       img {
-        width: 6rem;
+        width: 60px;
       }
     }
   }
@@ -141,7 +143,7 @@ section {
 }
 @media (min-width: 1024px) {
   section {
-    max-width: 90rem;
+    max-width: 900px;
     grid-template-areas:
     "heading heading heading"
     "frontend backend others";

@@ -9,23 +9,26 @@ import Tooltip from "../../components/Tooltip.vue";
   description="Hola, soy Daniel Cordero, Frontend Developer. Aquí puedes ver como contactarme y encontrarme en redes sociales."
 >
   <main>
-    <h1>Contacto</h1>
-    <p>
-      Contáctame si tienes algo que decirme o preguntarme.<br>
-      También es muy bienvenido cualquier feedback sobre este sitio web.
-    </p>
+    <h1>¿Hablemos?</h1>
     <section>
       <div class="list-container">
-        <p>Personalmente, prefiero estos medios de contacto</p>
+        <p>Contáctame</p>
         <ul class="contact-list">
-          <Tooltip string-tooltip="Linkedin">
+          <Tooltip stringTooltip="GitHub">
+            <li>
+              <a href="https://github.com/dnlambb">
+                <img src="/assets/social/github.svg" alt="Github">
+              </a>
+            </li>
+          </Tooltip>
+          <Tooltip stringTooltip="Linkedin">
             <li>
               <a href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
                 <img src="/assets/social/linkedin.svg" alt="Linkedin">
               </a>
             </li>
           </Tooltip>
-          <Tooltip string-tooltip="Email">
+          <Tooltip stringTooltip="Email">
             <li>
               <a href="mailto:dnlambb@writeme.com?Subject=Hello,%20just%20in%20case%20it%20is%20more%20comfortable%20for%20you,%20you%20can%20also%20write%20to%20me%20in%20Spanish.">
                 <img src="/assets/social/email.svg" alt="Email">
@@ -33,33 +36,9 @@ import Tooltip from "../../components/Tooltip.vue";
             </li>
           </Tooltip>
         </ul>
-        <p>Pero también puedes contactarme o encontrarme en estas redes sociales</p>
-        <ul class="social-list">
-          <Tooltip string-tooltip="GitHub">
-            <li>
-              <a href="https://github.com/dnlambb">
-                <img src="/assets/social/github.svg" alt="Github">
-              </a>
-            </li>
-          </Tooltip>
-          <Tooltip string-tooltip="Instagram">
-            <li>
-              <a href="https://www.instagram.com/dnlambb/">
-                <img src="/assets/social/instagram.svg" alt="Instragram">
-              </a>
-            </li>
-          </Tooltip>
-          <Tooltip string-tooltip="Twitter">
-            <li>
-              <a href="https://twitter.com/dnlambb">
-                <img src="/assets/social/twitter.svg" alt="Twitter">
-              </a>
-            </li>
-          </Tooltip>
-        </ul>
       </div>
       <picture>
-        <img class="mockup" src="/assets/working.svg" alt="working illustration">
+        <img class="mockup" src="/public/assets/programming.svg" alt="working illustration">
       </picture>
     </section>
   </main>
@@ -67,82 +46,67 @@ import Tooltip from "../../components/Tooltip.vue";
 
 <style lang="scss">
 @import "../../styles/colors.scss";
-
-
 main {
   width: 100%;
-  padding: 10rem 2rem;
-  background: url("/public/assets/wavesBgMobile.svg");
-	background-repeat: no-repeat;
+  padding: 8rem 1.25rem 6.25rem;
+  background: url("/public/assets/wave.svg") no-repeat center;
 	background-size: cover;
-	background-position: center;
 
   h1 {
-    color: $orange-light;
+    color: $primary;
     text-align: center;
-  }
-  p {
-    max-width: 60rem;
-    margin: 4rem auto 8rem;
-    text-align: center;
-    line-height: 3rem;
+    margin: 0 0 2.5rem;
   }
 
   section {
     p {
-      margin: 4rem auto 0;
-      max-width: 40rem;
+      margin: 0 auto;
+      max-width: 25rem;
       text-align: center;
     }
-    ul {
+    .contact-list {
       width: fit-content;
-      margin: 4rem auto;
+      margin: 1.25rem auto 2.5rem;
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       place-content: center;
-      gap: 4rem;
+      gap: 2.5rem;
       img {
-        width: 6rem;
+        width: 50px;
       }
     }
     picture {
       display: flex;
       .mockup {
         margin: 0 auto;
-        width: 24rem;
+        width: 240px;
         object-fit: fill;
       }
     }
   }
 }
-
-@media (min-width: 768px) {
-  main {
-    background: url("/public/assets/wavesBgTablet.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+@media (min-width: 425px) {
+  main section picture .mockup {
+    width: 320px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 880px) {
   main {
-    background: url("/public/assets/wavesBgDesktop.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
     section {
       display: flex;
       flex-direction: row-reverse;
-      place-content: center;
-      gap: 4rem;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
 
-      picture {
-        .mockup {
-          width: 40rem;
-        }
+      .contact-list img{
+        width: 60px;
+      }
+
+      picture .mockup{
+        width: 400px;
       }
     }
   }

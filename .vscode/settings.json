@@ -1,5 +1,19 @@
 {
   "conventionalCommits.scopes": [
-    "Navbar"
+    "settings.json",
+    "README.md",
+    "index.astro",
+    "projects.astro",
+    "contact.astro",
+    "404.astro",
+    "About.astro",
+    "CardProject.vue",
+    "Tooltip.vue",
+    "Knowledge.astro",
+    "RandomFacts.astro",
+    "Navbar.astro",
+    "Footer.astro",
+    "global.scss",
+    "colors.scss",
   ]
 }

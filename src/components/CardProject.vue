@@ -25,8 +25,8 @@
       </p>
     </div>
     <div class="card-project__button-container">
-      <a class="button-primary" text-glitch="Code" :href="item.urlRepo">Code</a>
-      <a class="button-primary" text-glitch="Web" :href="item.urlWeb">Web</a>
+      <a class="button-primary" button-glitch="Code" :href="item.urlRepo">Code</a>
+      <a class="button-primary" button-glitch="Web" :href="item.urlWeb">Web</a>
     </div>
   </div>
 </template>
@@ -46,10 +46,10 @@ export default {
 
 .card-project {
   width: 100%;
-  height: 40rem;
-  border-radius: 0.8rem;
-  border: 2px solid $orange-dark;
-  background: $color-bg;
+  height: 400px;
+  border-radius: 8px;
+  border: 2px solid $primary;
+  background: $terciary;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 1fr 50% 20%;
@@ -58,11 +58,11 @@ export default {
   &__tech-tag {
     width: fit-content;
     height: fit-content;
-    padding: 0.4rem 1rem;
-    font-size: 1.8rem;
-    border-radius: 0 0 2rem 2rem;
-    color: $color-text;
-    border: 2px solid $orange-dark;
+    padding: 0.25rem 0.625rem;
+    font-size: calculateRem(18px);
+    border-radius: 0 0 20px 20px;
+    color: $secondary;
+    border: 2px solid $primary;
     border-top: 0;
     background: rgba($color: #1a1c20, $alpha: 0.8);
     box-shadow: rgb(26, 28, 32, 0.4) 0px 8px 24px;
@@ -71,15 +71,19 @@ export default {
 
   &__content-container {
     width: 100%;
-    padding: 0 1.4rem;
+    height: fit-content;
+    padding: 0 0.875;
     text-align: center;
 
     h3 {
-      margin: 1rem 0 2rem;
+      margin: 0.625rem 0 1.25rem;
     }
     h3,
     p {
-      color: $color-text;
+      color: $secondary;
+    }
+    p {
+      margin: 0 auto;
     }
   }
 
@@ -87,41 +91,49 @@ export default {
     display: flex;
     align-self: flex-end;
     justify-content: space-evenly;
-
+    
     a {
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
       text-decoration: none;
     }
   }
-  @media (max-width: 370px) {
-    .card-project {
-      &__button-container {
-        margin-top: 2rem;
-        flex-direction: column;
-        align-items: center;
-  
-        & a {
-          margin-bottom: 2rem;
-        }
+}
+@media (max-width: 370px) {
+  .card-project {
+    height: 450px;
+    &__content-container {
+      p {
+        padding: 0 0.625rem;
       }
     }
-  }
-  @media (min-width: 768px) {
-    .card-project {
-      &__content-container {
-        padding-left: 4rem;
-        text-align: start;
-
-        & a {
-          padding: 0 4rem;
-        }
+    &__button-container {
+      margin-top: 1.25rem;
+      flex-direction: column;
+      align-items: center;
+      & a {
+        margin-bottom: 1.25rem;
       }
-    }
-  }
-  @media (min-width: 1440px) {
-    .card-project__button-container a {
-      padding: 0.4rem 6rem;
     }
   }
 }
+@media (min-width: 768px) {
+  .card-project {
+    &__content-container {
+      padding-left: 2.5rem;
+      text-align: start;
+      p {
+        margin: 0;
+      }
+      & a {
+        padding: 0 2.5rem;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .card-project__button-container a {
+    padding: 0.25rem 3.75rem;
+  }
+}
+
 </style>

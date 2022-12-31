@@ -5,9 +5,9 @@ import Layout from "../layouts/404Layout.astro";
 <Layout title="404 Page not found" description="page not found">
   <main>
     <section>
-      <h1>404</h1>
+      <h1 class="text-glitch" text-glitch="404">404</h1>
       <h2>It seems that... we are lost</h2>
-      <a href="/" class="button-primary" text-glitch="GotoHome">Go to Home</a>
+      <a href="/" class="button-primary" button-glitch="GotoHome">Go to Home</a>
     </section>
   </main>
 </Layout>
@@ -15,17 +15,16 @@ import Layout from "../layouts/404Layout.astro";
 <style lang="scss">
   @import "../styles/colors.scss";
   @import "../styles/button-primary.scss";
+  @import "../styles/text-glitch.scss";
 
   main {
     min-height: 100vh;
-    padding: 10rem 2rem;
+    padding: 8rem 1.25rem 6.25rem;
     display: flex;
     flex-direction: column;
     place-content: center;
-    background: url("public/assets/404.jpg");
-    background-repeat: no-repeat;
+    background: url("public/assets/404/404-sm.svg") no-repeat center;
     background-size: cover;
-    background-position: center;
 
     section {
       margin: 0 auto;
@@ -33,12 +32,26 @@ import Layout from "../layouts/404Layout.astro";
 
       h1,
       h2 {
-        color: $color-bg;
+        color: $secondary;
+        width: fit-content;
+        margin: 0 auto;
       }
       h2 {
-        max-width: 90rem;
-        margin: 4rem 0;
+        max-width: 900px;
+        margin: 2.5rem 0;
       }
+    }
+  }
+  @media (min-width: 426px) {
+    main {
+      background: url("public/assets/404/404-md.svg") no-repeat center;
+      background-size: cover;
+    }
+  }
+  @media (min-width: 1400px) {
+    main {
+      background: url("public/assets/404/404-lg.svg") no-repeat center;
+      background-size: cover;
     }
   }
 </style>

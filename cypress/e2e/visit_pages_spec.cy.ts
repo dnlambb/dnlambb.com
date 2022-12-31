@@ -13,11 +13,11 @@ describe('Visit About EN Page', () => {
     cy.title().should('include', 'Daniel Cordero • About me')
   })
 })
-describe('Visit Projects EN Page', () => {
+describe('Visit Work EN Page', () => {
   it('successfully loads', () => {
-    cy.visit('/projects')
+    cy.visit('/work')
     cy.contains('Fylo Landing')
-    cy.title().should('include', 'Daniel Cordero • Projects')
+    cy.title().should('include', 'Daniel Cordero • Works')
   })
 })
 describe('Visit Education EN Page', () => {
@@ -30,7 +30,7 @@ describe('Visit Education EN Page', () => {
 describe('Visit Contact EN Page', () => {
   it('successfully loads', () => {
     cy.visit('/contact')
-    cy.contains('I prefer')
+    cy.contains('Contact me')
     cy.title().should('include', 'Daniel Cordero • Contact')
   })
 })
@@ -48,9 +48,9 @@ describe('Visit About ES Page', () => {
     cy.title().should('include', 'Daniel Cordero • Sobre mí')
   })
 })
-describe('Visit Projects ES Page', () => {
+describe('Visit Work ES Page', () => {
   it('successfully loads', () => {
-    cy.visit('/es/projects')
+    cy.visit('/es/work')
     cy.contains('Fylo Landing')
     cy.title().should('include', 'Daniel Cordero • Proyectos')
   })
@@ -65,7 +65,7 @@ describe('Visit Education ES Page', () => {
 describe('Visit Contact ES Page', () => {
   it('successfully loads', () => {
     cy.visit('/es/contact')
-    cy.contains('prefiero')
+    cy.contains('Contáctame')
     cy.title().should('include', 'Daniel Cordero • Contacto')
   })
 })

@@ -1,3 +1,5 @@
+@import "./calculate-rem.scss";
+
 $slice-0: inset(50% 50% 50% 50%);
 $slice-1: inset(80% -6px 0 0);
 $slice-2: inset(50% -6px 30% 0);
@@ -10,14 +12,14 @@ $slice-5: inset(80% -6px 5% 0);
   &:after {
     margin: 0 auto;
     position: relative;
-    padding: 0.4rem 4rem;
-    border-radius: 0.2rem;
-    border: 1px solid $orange-dark;
+    padding: calculateRem(4px) calculateRem(40px);
+    border-radius: 2px;
+    border: 1px solid $primary;
     font-weight: 500;
-    letter-spacing: 0.3rem;
+    letter-spacing: calculateRem(3px);
     text-decoration: none;
-    color: $color-text;
-    background: $color-bg;
+    color: $secondary;
+    background: $terciary;
     outline: transparent;
     user-select: none;
     -webkit-user-select: none;
@@ -26,25 +28,25 @@ $slice-5: inset(80% -6px 5% 0);
   }
 
   &:hover {
-    background: $orange-light;
+    background: $primary;
     transition: 400ms;
   }
 
   &:after {
-    content: attr(text-glitch);
+    content: attr(button-glitch);
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    text-shadow: -3px -3px 0px $orange-dark, 3px 3px 0px $orange-dark;
+    text-shadow: -3px -3px 0px $primary, 3px 3px 0px $primary;
     clip-path: $slice-0;
   }
 
   &:hover:after {
-    background: $orange-light;
-    animation: 1s glitch;
+    background: $primary;
+    animation: 1s buttonglitch;
     animation-delay: 450ms;
     animation-timing-function: steps(2, end);
   }
@@ -54,7 +56,7 @@ $slice-5: inset(80% -6px 5% 0);
     transition: 400ms;
   }
 
-  @keyframes glitch {
+  @keyframes buttonglitch {
     0% {
       clip-path: $slice-1;
       transform: translate(-20px, -10px);

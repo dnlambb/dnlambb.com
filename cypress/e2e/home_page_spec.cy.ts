@@ -1,4 +1,4 @@
-describe('Visit Home EN Page', () => {
+describe('Test Home EN Page', () => {
   it('visit page', () => {
     cy.visit('/')
     cy.title().should('include', 'Daniel Cordero • @dnlambb')
@@ -9,12 +9,38 @@ describe('Visit Home EN Page', () => {
   })
 
   it('load repository', () => {
-    cy.get('.link-card').contains('Repository').trigger('mouseover')
-    cy.get('[href="https://github.com/dnlambb/dnlambb.com"]')
+    cy.get('.link-card').contains('Repository')
+  })
+
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
+  })
+
+  it('find img not visible', () => {
+    cy.get('img')
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
+  })
+
+  it('find broken background image projects', () => {
+    cy.get('.card-project:first')
+      .should('have.css', 'background')
+      .and('include', '/assets/projects/fylo-landing.jpg')
+    cy.get('.card-project:last')
+      .should('have.css', 'background')
+      .and('include', '/assets/projects/api-ip.png')
   })
 })
 
-describe('Visit Home ES Page', () => {
+
+describe('Test Home ES Page', () => {
   it('visit page', () => {
     cy.visit('/es')
     cy.title().should('include', 'Daniel Cordero • @dnlambb')
@@ -25,7 +51,32 @@ describe('Visit Home ES Page', () => {
   })
 
   it('load repository', () => {
-    cy.get('.link-card').contains('Repositorio').trigger('mouseover')
-    cy.get('[href="https://github.com/dnlambb/dnlambb.com"]')
+    cy.get('.link-card').contains('Repositorio')
+  })
+  
+  it('find broken links', () => {
+    cy.get('a').each(link => {
+      if (link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false
+        })
+    })
+  })
+
+  it('find img not visible', () => {
+    cy.get('img')
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
+  })
+
+  it('find broken background image projects', () => {
+    cy.get('.card-project:first')
+      .should('have.css', 'background')
+      .and('include', '/assets/projects/fylo-landing.jpg')
+    cy.get('.card-project:last')
+      .should('have.css', 'background')
+      .and('include', '/assets/projects/api-ip.png')
   })
 })
