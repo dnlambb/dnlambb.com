@@ -32,10 +32,10 @@ describe('Test Home EN Page', () => {
   it('find broken background image projects', () => {
     cy.get('.card-project:first')
       .should('have.css', 'background')
-      .and('include', '/assets/projects/fylo-landing.jpg')
+      .and('include', '/assets/projects/github-user-search.png')
     cy.get('.card-project:last')
       .should('have.css', 'background')
-      .and('include', '/assets/projects/api-ip.png')
+      .and('include', '/assets/projects/fylo-landing.jpg')
   })
 })
 
@@ -74,9 +74,9 @@ describe('Test Home ES Page', () => {
   it('find broken background image projects', () => {
     cy.get('.card-project:first')
       .should('have.css', 'background')
-      .and('include', '/assets/projects/fylo-landing.jpg')
+      .and('include', '/assets/projects/github-user-search.png')
     cy.get('.card-project:last')
       .should('have.css', 'background')
-      .and('include', '/assets/projects/api-ip.png')
+      .and('include', '/assets/projects/fylo-landing.jpg')
   })
 })
