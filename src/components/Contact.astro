@@ -1,0 +1,114 @@
+---
+import Tooltip from "./Tooltip.vue"
+
+export interface Props {
+  title: string;
+  paragraph: string;
+}
+
+const { title, paragraph } = Astro.props;
+---
+
+<section class="contact-section">
+  <div class="list-container">
+    <h2>{title}</h2>
+    <p>{paragraph}</p>
+    <ul class="contact-list">
+      <Tooltip stringTooltip="GitHub">
+        <li>
+          <a href="https://github.com/dnlambb">
+            <img src="/assets/social/github.svg" alt="Github" />
+          </a>
+        </li>
+      </Tooltip>
+      <Tooltip stringTooltip="Linkedin">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/"
+          >
+            <img src="/assets/social/linkedin.svg" alt="Linkedin" />
+          </a>
+        </li>
+      </Tooltip>
+      <Tooltip stringTooltip="Email">
+        <li>
+          <a
+            href="mailto:dnlambb@writeme.com?Subject=Hello,%20just%20in%20case%20it%20is%20more%20comfortable%20for%20you,%20you%20can%20also%20write%20to%20me%20in%20Spanish."
+          >
+            <img src="/assets/social/email.svg" alt="Email" />
+          </a>
+        </li>
+      </Tooltip>
+    </ul>
+  </div>
+  <picture>
+    <img
+      class="mockup"
+      src="/assets/programming.svg"
+      alt="working illustration"
+    />
+  </picture>
+</section>
+
+<style lang="scss">
+@import "../styles/colors.scss";
+
+.contact-section {
+  padding: 4rem 1.25rem;
+  
+  h2 {
+    color: $primary;
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+  p {
+    margin: 0 auto 1.25rem;
+    max-width: 25rem;
+    text-align: center;
+  }
+  .contact-list {
+    width: fit-content;
+    margin: 1.25rem auto 2.5rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 2.5rem;
+    img {
+      width: 50px;
+    }
+  }
+  picture {
+    display: flex;
+    .mockup {
+      margin: 0 auto;
+      width: 260px;
+      object-fit: fill;
+    }
+  }
+}
+@media (min-width: 425px) {
+  .contact-section picture .mockup {
+    width: 340px;
+  }
+}
+
+@media (min-width: 900px) {
+  .contact-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    .contact-list img{
+      width: 60px;
+    }
+
+    picture .mockup{
+      width: 500px;
+    }
+  }
+}
+
+</style>
