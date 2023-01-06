@@ -2,6 +2,10 @@ describe('Testing Footer Home Page', () => {
   it('visit page', () => {
     cy.visit('/')
   })
+
+  it('load repository', () => {
+    cy.get('.link-card').contains('Repository')
+  })
   
   it('load message', () => {
     cy.get('.message-container').contains('Built by')
@@ -24,6 +28,10 @@ describe('Testing Footer About Page', () => {
   it('visit page', () => {
     cy.visit('/about')
   })
+
+  it('load repository', () => {
+    cy.get('.link-card').contains('Repository')
+  })
   
   it('load message', () => {
     cy.get('.message-container').contains('Built by')
@@ -44,6 +52,10 @@ describe('Testing Footer About Page', () => {
 describe('Testing Footer Projects Page', () => {
   it('visit page', () => {
     cy.visit('/work')
+  })
+
+  it('load repository', () => {
+    cy.get('.link-card').contains('Repository')
   })
   
   it('load message', () => {

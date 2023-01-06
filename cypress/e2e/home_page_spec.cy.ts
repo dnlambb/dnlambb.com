@@ -8,10 +8,6 @@ describe('Test Home EN Page', () => {
     cy.get('h1').contains('Daniel Cordero')
   })
 
-  it('load repository', () => {
-    cy.get('.link-card').contains('Repository')
-  })
-
   it('find broken links', () => {
     cy.get('a').each(link => {
       if (link.prop('href'))
@@ -50,10 +46,6 @@ describe('Test Home ES Page', () => {
     cy.get('h1').contains('Daniel Cordero')
   })
 
-  it('load repository', () => {
-    cy.get('.link-card').contains('Repositorio')
-  })
-  
   it('find broken links', () => {
     cy.get('a').each(link => {
       if (link.prop('href'))
