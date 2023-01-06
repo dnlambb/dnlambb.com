@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Tooltip from "../../components/Tooltip.vue";
 import CardProject from "../../components/CardProject.vue";
+import Contact from "../../components/Contact.astro";
 
 const pinProjects = {
 	GithubUserSearch: {
@@ -65,6 +66,7 @@ const pinProjects = {
 			</div>
 			<a href="/es/work" class="button-primary" button-glitch="Vertodos">Ver todos</a>
 		</section>
+		<Contact title="¿Hablemos?" paragraph="Contáctame de las siguientes formas" />
   </main>
 </MainLayout>
 
@@ -132,7 +134,7 @@ main {
 	.home-pin-projects {
 		text-align: center;
 		margin-top: 2rem;
-		padding: 0 1.25rem 3.125rem;
+		padding: 0 1.25rem 4rem;
 		&__container-projects {
 			padding: 3.125rem 0;
 			display: flex;
