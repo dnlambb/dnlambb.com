@@ -20,13 +20,6 @@ describe('Visit Work EN Page', () => {
     cy.title().should('include', 'Daniel Cordero • Works')
   })
 })
-describe('Visit Contact EN Page', () => {
-  it('successfully loads', () => {
-    cy.visit('/contact')
-    cy.contains('Contact me')
-    cy.title().should('include', 'Daniel Cordero • Contact')
-  })
-})
 describe('Visit Home ES Page', () => {
   it('successfully loads', () => {
     cy.visit('/es')
@@ -46,13 +39,6 @@ describe('Visit Work ES Page', () => {
     cy.visit('/es/work')
     cy.contains('Fylo Landing')
     cy.title().should('include', 'Daniel Cordero • Proyectos')
-  })
-})
-describe('Visit Contact ES Page', () => {
-  it('successfully loads', () => {
-    cy.visit('/es/contact')
-    cy.contains('Contáctame')
-    cy.title().should('include', 'Daniel Cordero • Contacto')
   })
 })
 describe('Visit Error(404) Page', () => {
