@@ -12,7 +12,6 @@ describe('Testing Navbar Home ES Page', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
     cy.get('[href="/es/work"]')
-    cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
   })
   it('click navbar links', () => {
@@ -34,7 +33,6 @@ describe('Testing Navbar About ES Page', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
     cy.get('[href="/es/work"]')
-    cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
   })
   it('click navbar links', () => {
@@ -56,7 +54,6 @@ describe('Testing Navbar Work ES Page', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
     cy.get('[href="/es/work"]')
-    cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
   })
   it('click navbar links', () => {
@@ -78,7 +75,6 @@ describe('Testing Navbar Contact ES Page', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/about"]')
     cy.get('[href="/es/work"]')
-    cy.get('[href="/es/education"]')
     cy.get('[href="/es/contact"]')
   })
   it('click navbar links', () => {

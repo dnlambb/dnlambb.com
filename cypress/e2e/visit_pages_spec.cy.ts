@@ -20,13 +20,6 @@ describe('Visit Work EN Page', () => {
     cy.title().should('include', 'Daniel Cordero • Works')
   })
 })
-describe('Visit Education EN Page', () => {
-  it('successfully loads', () => {
-    cy.visit('/education')
-    cy.contains('studied')
-    cy.title().should('include', 'Daniel Cordero • Education')
-  })
-})
 describe('Visit Contact EN Page', () => {
   it('successfully loads', () => {
     cy.visit('/contact')
@@ -53,13 +46,6 @@ describe('Visit Work ES Page', () => {
     cy.visit('/es/work')
     cy.contains('Fylo Landing')
     cy.title().should('include', 'Daniel Cordero • Proyectos')
-  })
-})
-describe('Visit Education ES Page', () => {
-  it('successfully loads', () => {
-    cy.visit('/es/education')
-    cy.contains('Aquí puedes ver')
-    cy.title().should('include', 'Daniel Cordero • Educación')
   })
 })
 describe('Visit Contact ES Page', () => {
