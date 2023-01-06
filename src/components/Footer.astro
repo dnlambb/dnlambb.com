@@ -1,10 +1,18 @@
 ---
 import EndMessage from "./EndMessage.vue";
+import CardLink from "./CardLink.astro";
 
 let year = new Date().getFullYear();
 ---
 
 <footer>
+  <ul role="list" class="link-card-grid">
+    <CardLink
+      href="https://github.com/dnlambb/dnlambb.com"
+      title="Repository"
+      body="The repository of this website in GitHub."
+    />
+  </ul>
   <EndMessage message="Built by Daniel Cordero with love" />
   <p class="license">
     <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -21,6 +29,15 @@ let year = new Date().getFullYear();
     width: 100%;
     padding: 2.5rem 1.25rem;
     overflow: hidden;
+    .link-card-grid {
+			width: 80%;
+			margin: 3.438rem auto;
+      border-top: 1px solid $complementary;
+      padding-top: 2rem;
+			display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+		}
     .license {
       margin: 2.5rem auto 0;
       text-align: center;
