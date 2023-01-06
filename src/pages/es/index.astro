@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import CardLink from "../../components/CardLink.astro";
 import Tooltip from "../../components/Tooltip.vue";
 import CardProject from "../../components/CardProject.vue";
 
@@ -36,13 +35,6 @@ const pinProjects = {
         <p>Hola, soy</p>
       </div>
       <h2>Desarrollador Frontend</h2>
-      <ul role="list" class="link-card-grid">
-        <CardLink
-          href="https://github.com/dnlambb/dnlambb.com"
-          title="Repositorio"
-          body="El repositorio de este sitio web en GitHub."
-        />
-      </ul>
       <ul class="list-social">
         <Tooltip stringTooltip="GitHub">
           <li>
@@ -113,12 +105,6 @@ main {
 			margin: 0 auto;
 			text-align: center;
 			line-height: 1.6;
-		}
-		.link-card-grid {
-			width: fit-content;
-			margin: 3.438rem auto;
-			display: grid;
-			grid-template-columns: repeat(1, 1fr);
 		}
 		.list-social {
 			width: fit-content;
