@@ -7,51 +7,44 @@ import Layout from "../layouts/404Layout.astro";
     <section>
       <h1 class="text-glitch" text-glitch="404">404</h1>
       <h2>It seems that... we are lost</h2>
+      <img class="gif" src="https://media.giphy.com/media/vVEjKbAUFtZzFzjYbz/giphy.gif" alt="gif">
       <a href="/" class="button-primary" button-glitch="GotoHome">Go to Home</a>
     </section>
   </main>
 </Layout>
 
 <style lang="scss">
-  @import "../styles/colors.scss";
-  @import "../styles/button-primary.scss";
-  @import "../styles/text-glitch.scss";
+@import "../styles/colors.scss";
+@import "../styles/button-primary.scss";
+@import "../styles/text-glitch.scss";
 
-  main {
-    min-height: 100vh;
-    padding: 8rem 1.25rem 6.25rem;
+main {
+  min-height: 100vh;
+  padding: 1.25rem;
+  display: flex;
+  place-items: center;
+  section {
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    place-content: center;
-    background: url("public/assets/404/404-sm.svg") no-repeat center;
-    background-size: cover;
-
-    section {
+    h1,
+    h2 {
+      width: fit-content;
       margin: 0 auto;
-      text-align: center;
+    }
+    h1 {
+      color: $primary;
+    }
+    h2 {
+      max-width: 900px;
+      margin: 2rem 0;
+    }
+    .gif {
+      width: 100%;
+      margin: 0 auto 4rem;
+    }
+  }
+}
 
-      h1,
-      h2 {
-        color: $secondary;
-        width: fit-content;
-        margin: 0 auto;
-      }
-      h2 {
-        max-width: 900px;
-        margin: 2.5rem 0;
-      }
-    }
-  }
-  @media (min-width: 426px) {
-    main {
-      background: url("public/assets/404/404-md.svg") no-repeat center;
-      background-size: cover;
-    }
-  }
-  @media (min-width: 1400px) {
-    main {
-      background: url("public/assets/404/404-lg.svg") no-repeat center;
-      background-size: cover;
-    }
-  }
 </style>
