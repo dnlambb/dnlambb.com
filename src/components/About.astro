@@ -7,32 +7,43 @@ export interface Props{
 const { about, btnText } = Astro.props;
 ---
 
-<section>
-  <img class="profile" src="/assets/profile.png" alt="profile image of me" />
-  <p>
-    { about }
-  </p>
-  <a href="/assets/cv-frontend.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
-  <div class="social-container">
-    <Tooltip stringTooltip="Linkedin">
-      <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
-        <img src="/assets/social/linkedin.svg" alt="Linkedin">
-      </a>
-    </Tooltip>
-    <Tooltip stringTooltip="GitHub">
-      <a class="github" href="https://github.com/dnlambb">
-        <img src="/assets/social/github.svg" alt="GitHub">
-      </a>
-    </Tooltip>
+<section id="about">
+  <h2>About me</h2>
+  <div class="about-card">
+    <img class="profile" src="/assets/profile.png" alt="profile image of me" />
+    <p>
+      { about }
+    </p>
+    <a href="/assets/cv-frontend.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
+    <div class="social-container">
+      <Tooltip stringTooltip="Linkedin">
+        <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez-528b11224/">
+          <img src="/assets/social/linkedin.svg" alt="Linkedin">
+        </a>
+      </Tooltip>
+      <Tooltip stringTooltip="GitHub">
+        <a class="github" href="https://github.com/dnlambb">
+          <img src="/assets/social/github.svg" alt="GitHub">
+        </a>
+      </Tooltip>
+    </div>
   </div>
 </section>
-<style lang="scss">
-  @import "../styles/colors.scss";
-  @import "../styles/button-primary.scss";
 
-  section {
+<style lang="scss">
+@import "../styles/colors.scss";
+@import "../styles/button-primary.scss";
+
+section {
+  padding: 4rem 1.25rem;
+  h2 {
+    margin-bottom: 4rem;
+    text-align: center;
+    color: $primary;
+  }
+  .about-card {
     max-width: 37.5rem;
-    margin: 5rem auto;
+    margin: 2rem auto;
     padding: 2rem 1.25rem;
     display: flex;
     place-items: center;
@@ -63,39 +74,38 @@ const { about, btnText } = Astro.props;
       }
     }
   }
-  @media (min-width: 425px) {
-    section {
-      p {
-        text-align: start;
-      }
+}
+@media (min-width: 425px) {
+  section .about-card p {
+      text-align: start;
+  }
+}
+@media (min-width: 1024px) {
+  section .about-card {
+    max-width: fit-content;
+    display: grid;
+    place-content: center;
+    align-items: center;
+    grid-template-columns: 18.75rem 18.75rem 18.75rem;
+    grid-template-areas:
+      "img text text"
+      "img text text"
+      "img button social";
+    gap: 1.25rem 0;
+    .profile {
+      grid-area: img;
+      width: 220px;
+    }
+    p {
+      grid-area: text;
+      align-self: center;
+    }
+    .resume {
+      grid-area: button;
+    }
+    .social-container {
+      grid-area: social;
     }
   }
-  @media (min-width: 1024px) {
-    section {
-      max-width: fit-content;
-      display: grid;
-      place-content: center;
-      align-items: center;
-      grid-template-columns: 18.75rem 18.75rem 18.75rem;
-      grid-template-areas:
-        "img text text"
-        "img text text"
-        "img button social";
-      gap: 1.25rem 0;
-      .profile {
-        grid-area: img;
-        width: 220px;
-      }
-      p {
-        grid-area: text;
-        align-self: center;
-      }
-      .resume {
-        grid-area: button;
-      }
-      .social-container {
-        grid-area: social;
-      }
-    }
-  }
+}
 </style>

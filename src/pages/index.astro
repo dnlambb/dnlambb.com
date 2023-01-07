@@ -2,6 +2,9 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Tooltip from "../components/Tooltip.vue";
 import CardProject from "../components/CardProject.vue";
+import About from "../components/About.astro";
+import Knowledge from "../components/Knowledge.astro";
+import RandomFacts from "../components/RandomFacts.astro";
 import Contact from "../components/Contact.astro";
 
 const pinProjects = {
@@ -21,6 +24,10 @@ const pinProjects = {
     urlRepo: "https://github.com/dnlambb/fylo-landing-page",
     urlWeb: "https://dnlambb.github.io/fylo-landing-page/",
   }
+}
+const randomFacts = {
+  item1: "I like to read",
+  item2: "I love volleyball",
 }
 ---
 
@@ -66,6 +73,12 @@ const pinProjects = {
 			</div>
 			<a href="/work" class="button-primary" button-glitch="Seeall">See all</a>
 		</section>
+		<About 
+			about="I am a Frontend developer. I focus on creating websites. I am passionate about programming. Now I'm studying Analyst Programmer at Inacap university. And I also enjoy learning in an autodidact way."
+      btnText="Resume"
+		/>
+		<RandomFacts heading="Hobbies" randomFacts={randomFacts} />
+		<Knowledge heading="Knowledge" headingOther="Others" />
 		<Contact title="Let's talk?" paragraph="Contact me in the following ways" />
   </main>
 </MainLayout>
