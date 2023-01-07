@@ -1,23 +1,15 @@
 describe('Visit Home EN Page', () => {
   it('successfully loads', () => {
     cy.visit('/')
-    cy.contains('Hi there')
     cy.contains('Daniel Cordero')
     cy.title().should('include', 'Daniel Cordero • @dnlambb')
   })
 })
-describe('Visit About EN Page', () => {
+describe('Visit Projects EN Page', () => {
   it('successfully loads', () => {
-    cy.visit('/about')
-    cy.contains('developer')
-    cy.title().should('include', 'Daniel Cordero • About me')
-  })
-})
-describe('Visit Work EN Page', () => {
-  it('successfully loads', () => {
-    cy.visit('/work')
+    cy.visit('/projects')
     cy.contains('Fylo Landing')
-    cy.title().should('include', 'Daniel Cordero • Works')
+    cy.title().should('include', 'Daniel Cordero • Projects')
   })
 })
 describe('Visit Home ES Page', () => {
@@ -27,16 +19,9 @@ describe('Visit Home ES Page', () => {
     cy.title().should('include', 'Daniel Cordero • @dnlambb')
   })
 })
-describe('Visit About ES Page', () => {
+describe('Visit Projects ES Page', () => {
   it('successfully loads', () => {
-    cy.visit('/es/about')
-    cy.contains('desarrollador')
-    cy.title().should('include', 'Daniel Cordero • Sobre mí')
-  })
-})
-describe('Visit Work ES Page', () => {
-  it('successfully loads', () => {
-    cy.visit('/es/work')
+    cy.visit('/es/projects')
     cy.contains('Fylo Landing')
     cy.title().should('include', 'Daniel Cordero • Proyectos')
   })

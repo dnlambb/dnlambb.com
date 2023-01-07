@@ -1,11 +1,11 @@
-describe("Visit Work EN Page", () => {
+describe("Visit Projects EN Page", () => {
   it("visit page", () => {
-    cy.visit("/work");
-    cy.title().should('include', 'Daniel Cordero • Works')
+    cy.visit("/projects");
+    cy.title().should('include', 'Daniel Cordero • Projects')
   });
 
   it("load heading", () => {
-    cy.get("h1").contains("Work");
+    cy.get("h1").contains("Projects");
   });
 
   it("load card project", () => {
@@ -33,9 +33,9 @@ describe("Visit Work EN Page", () => {
   })
 });
 
-describe("Visit Work ES Page", () => {
+describe("Visit Projects ES Page", () => {
   it("visit page", () => {
-    cy.visit("/es/work");
+    cy.visit("/es/projects");
     cy.title().should('include', 'Daniel Cordero • Proyectos')
   });
 

@@ -10,8 +10,8 @@ describe('Testing Navbar Home Page', () => {
   })
   it('load hrefs of links', () => {
     cy.get('[href="/"]')
-    cy.get('[href="/about"]')
-    cy.get('[href="/work"]')
+    cy.get('[href="/#about"]')
+    cy.get('[href="/projects"]')
     cy.get('[href="/#contact"]')
   })
   it('click navbar links', () => {
@@ -20,42 +20,20 @@ describe('Testing Navbar Home Page', () => {
 })
 
 
-describe('Testing Navbar About Page', () => {
-  it('visit about page', () => {
-    cy.visit('/about')
-  })
-  it('load brand-link', () => {
-    cy.get('.brand-link').get('[href="/"]:first')
-  })
-  it('load navbar links', () => {
-    cy.get('.list-links li a').contains('About')
-  })
-  it('load hrefs of links', () => {
-    cy.get('[href="/"]')
-    cy.get('[href="/about"]')
-    cy.get('[href="/work"]')
-    cy.get('[href="/#contact"]')
-  })
-  it('click navbar links', () => {
-    cy.get('.list-links li a:first').click()
-  })
-})
-
-
 describe('Testing Navbar Projects Page', () => {
   it('visit projects page', () => {
-    cy.visit('/work')
+    cy.visit('/projects')
   })
   it('load brand-link', () => {
     cy.get('.brand-link').get('[href="/"]:first')
   })
   it('load navbar links', () => {
-    cy.get('.list-links li a').contains('Work')
+    cy.get('.list-links li a').contains('Projects')
   })
   it('load hrefs of links', () => {
     cy.get('[href="/"]')
-    cy.get('[href="/about"]')
-    cy.get('[href="/work"]')
+    cy.get('[href="/#about"]')
+    cy.get('[href="/projects"]')
     cy.get('[href="/#contact"]')
   })
   it('click navbar links', () => {
@@ -76,8 +54,8 @@ describe('Testing Navbar Error(404) Page', () => {
   })
   it('load hrefs of links', () => {
     cy.get('[href="/"]')
-    cy.get('[href="/about"]')
-    cy.get('[href="/work"]')
+    cy.get('[href="/#about"]')
+    cy.get('[href="/projects"]')
     cy.get('[href="/#contact"]')
   })
   it('click navbar links', () => {
