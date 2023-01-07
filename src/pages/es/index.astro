@@ -4,7 +4,7 @@ import Tooltip from "../../components/Tooltip.vue";
 import CardProject from "../../components/CardProject.vue";
 import About from "../../components/About.astro";
 import Knowledge from "../../components/Knowledge.astro";
-import RandomFacts from "../../components/RandomFacts.astro";
+import Hobbies from "../../components/Hobbies.astro";
 import Contact from "../../components/Contact.astro";
 
 const pinProjects = {
@@ -26,7 +26,7 @@ const pinProjects = {
   },
 }
 
-const randomFacts = {
+const hobbies = {
   item1: "Me gusta leer",
   item2: "Amo el voleibol",
 }
@@ -65,7 +65,7 @@ const randomFacts = {
 			</div>
     </section>
     <section class="home-pin-projects">
-			<h3>Proyectos</h3>
+			<h2>Proyectos</h2>
 			<div class="home-pin-projects__container-projects">
 				<CardProject project={pinProjects}/>
 			</div>
@@ -75,7 +75,7 @@ const randomFacts = {
 			about="Soy un desarrollador Frontend. Me centro en la construcción de páginas webs. Me apasiona programar. Ahora me encuentro estudiando Analista programador en la universidad Inacap. Y también disfruto formándome de manera autodidacta."
 			btnText="Currículum"
 		/>
-		<RandomFacts heading="Hobbies" randomFacts={randomFacts} />
+		<Hobbies heading="Pasatiempos" hobbies={hobbies} />
 		<Knowledge heading="Conocimientos" headingOther="Otros" />
 		<Contact title="¿Hablemos?" paragraph="Contáctame de las siguientes formas" />
   </main>
@@ -104,9 +104,9 @@ main {
 		}
 		h2 {
 			width: fit-content;
-			margin: 0.625rem auto;
+			margin: 0.625rem auto 2rem;
 			text-align: center;
-			color: $primary;
+			color: $secondary;
 		}
 		.list-social {
 			width: fit-content;
@@ -135,6 +135,9 @@ main {
 		text-align: center;
 		margin-top: 2rem;
 		padding: 0 1.25rem 4rem;
+		h2 {
+			color: $primary;
+		}
 		&__container-projects {
 			padding: 3.125rem 0;
 			display: flex;
