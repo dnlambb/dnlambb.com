@@ -25,7 +25,7 @@
       </p>
     </div>
     <div class="card-project__button-container">
-      <a class="button-primary" button-glitch="Code" :href="item.urlRepo">Code</a>
+      <a class="button-primary" button-glitch="Repo" :href="item.urlRepo">Repo</a>
       <a class="button-primary" button-glitch="Web" :href="item.urlWeb">Web</a>
     </div>
   </div>
