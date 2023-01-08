@@ -1,14 +1,15 @@
 ---
 import Tooltip from './Tooltip.vue';
 export interface Props{
+  title: string,
   about: string,
   btnText: string
 }
-const { about, btnText } = Astro.props;
+const { title, about, btnText } = Astro.props;
 ---
 
 <section id="about">
-  <h2>About me</h2>
+  <h2>{title}</h2>
   <div class="about-card">
     <img class="profile" src="/assets/profile.jpeg" alt="profile" />
     <p>
