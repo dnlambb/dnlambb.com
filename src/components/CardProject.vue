@@ -72,7 +72,7 @@ export default {
   &__content-container {
     width: 100%;
     height: fit-content;
-    padding: 0 0.875;
+    padding: 0 0.875rem;
     text-align: center;
 
     h3 {
@@ -119,7 +119,7 @@ export default {
 @media (min-width: 768px) {
   .card-project {
     &__content-container {
-      padding-left: 2.5rem;
+      padding: 0 2.5rem;
       text-align: start;
       p {
         margin: 0;
