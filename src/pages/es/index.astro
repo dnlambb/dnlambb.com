@@ -41,6 +41,7 @@ const hobbies = {
     <section class="home-header">
 			<h1 class="text-glitch" text-glitch="Daniel Cordero">Daniel Cordero</h1>
       <h2>Desarrollador Frontend</h2>
+			<p>Hola, este es mi portafolio donde podrás ver mis proyectos y saber un poco sobre mí</p>
       <ul class="list-social">
         <Tooltip stringTooltip="GitHub">
           <li>
@@ -91,7 +92,7 @@ main {
 	.home-header {
 		width: 100%;
 		min-height: 100vh;
-		padding: 8rem 1.25rem 1.25rem;
+		padding: 1.25rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -104,9 +105,15 @@ main {
 		}
 		h2 {
 			width: fit-content;
-			margin: 0.625rem auto 2rem;
+			margin: 0.625rem auto 3rem;
 			text-align: center;
 			color: $secondary;
+		}
+		p {
+			margin: 0 auto 4rem;
+			max-width: 50ch;
+			text-align: center;
+			line-height: 2rem;
 		}
 		.list-social {
 			width: fit-content;
