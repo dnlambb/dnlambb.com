@@ -6,12 +6,13 @@ describe('Testing Navbar Home ES Page', () => {
     cy.get('.brand-link').get('[href="/es"]:first')
   })
   it('load navbar links', () => {
-    cy.get('.list-links li a').contains('Home')
+    cy.get('.list-links li a').contains('Inicio')
   })
   it('load hrefs of links', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/#about"]')
     cy.get('[href="/es/projects"]')
+    cy.get('[href="/es/#skills"]')
     cy.get('[href="/es/#contact"]')
   })
   it('click navbar links', () => {
@@ -34,6 +35,7 @@ describe('Testing Navbar Projects ES Page', () => {
     cy.get('[href="/es"]')
     cy.get('[href="/es/#about"]')
     cy.get('[href="/es/projects"]')
+    cy.get('[href="/es/#skills"]')
     cy.get('[href="/es/#contact"]')
   })
   it('click navbar links', () => {

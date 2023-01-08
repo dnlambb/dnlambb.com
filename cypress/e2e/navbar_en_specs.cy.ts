@@ -12,6 +12,7 @@ describe('Testing Navbar Home Page', () => {
     cy.get('[href="/"]')
     cy.get('[href="/#about"]')
     cy.get('[href="/projects"]')
+    cy.get('[href="/#skills"]')
     cy.get('[href="/#contact"]')
   })
   it('click navbar links', () => {
@@ -34,6 +35,7 @@ describe('Testing Navbar Projects Page', () => {
     cy.get('[href="/"]')
     cy.get('[href="/#about"]')
     cy.get('[href="/projects"]')
+    cy.get('[href="/#skills"]')
     cy.get('[href="/#contact"]')
   })
   it('click navbar links', () => {
@@ -56,6 +58,7 @@ describe('Testing Navbar Error(404) Page', () => {
     cy.get('[href="/"]')
     cy.get('[href="/#about"]')
     cy.get('[href="/projects"]')
+    cy.get('[href="/#skills"]')
     cy.get('[href="/#contact"]')
   })
   it('click navbar links', () => {
