@@ -131,6 +131,9 @@ export default {
   }
 }
 @media (min-width: 1440px) {
+  .card-project {
+    max-width: 56.25rem;
+  }
   .card-project__button-container a {
     padding: 0.25rem 3.75rem;
   }
