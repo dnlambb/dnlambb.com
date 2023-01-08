@@ -20,6 +20,12 @@ describe('Testing Error Page', () => {
         })
     })
   })
+  it('find img not visible', () => {
+    cy.get('img')
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
+  })
 
   it('click btn go home', () => {
     cy.get('a.button-primary').click()
