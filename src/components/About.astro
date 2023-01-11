@@ -1,33 +1,34 @@
 ---
-import Tooltip from './Tooltip.vue';
 export interface Props{
   title: string,
-  about: string,
-  btnText: string
+  sentence1: string,
+  sentence2: string,
+  subtitle: string,
+  hobbies: object,
 }
-const { title, about, btnText } = Astro.props;
+const { title, sentence1, sentence2, subtitle, hobbies } = Astro.props;
 ---
 
 <section id="about">
-  <h2>{title}</h2>
   <div class="about-card">
-    <img class="profile" src="/assets/profile.jpeg" alt="profile" />
+    <h2>{title}</h2>
     <p>
-      { about }
+      { sentence1 }
     </p>
-    <a href="/assets/Daniel Cordero CV.pdf" class="button-primary resume" button-glitch={btnText}>{btnText}</a>
-    <div class="social-container">
-      <Tooltip stringTooltip="Linkedin">
-        <a class="linkedin" href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez/">
-          <img src="/assets/social/linkedin.svg" alt="Linkedin">
-        </a>
-      </Tooltip>
-      <Tooltip stringTooltip="GitHub">
-        <a class="github" href="https://github.com/dnlambb">
-          <img src="/assets/social/github.svg" alt="GitHub">
-        </a>
-      </Tooltip>
-    </div>
+    <p>
+      { sentence2 }
+    </p>
+    <h3>{subtitle}</h3>
+    <ul>
+      <li>
+        <img src="/assets/hobbies/book.png" alt="book" />
+        {hobbies.item1}
+      </li>
+      <li>
+        <img src="/assets/hobbies/volleyball.png" alt="ball of volleyball" />
+        {hobbies.item2}
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -37,75 +38,66 @@ const { title, about, btnText } = Astro.props;
 
 section {
   padding: 4rem 1.25rem;
-  h2 {
-    margin-bottom: 4rem;
-    text-align: center;
-    color: $primary;
-  }
   .about-card {
     max-width: 37.5rem;
     margin: 2rem auto;
-    padding: 2rem 1.25rem;
+    padding: 3rem 1.25rem 3rem 2rem;
     display: flex;
-    place-items: center;
+    justify-items: self-start;
     flex-direction: column;
     gap: 1.875rem;
     border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     background: linear-gradient(145deg, #17191d, #1c1e22);
-    box-shadow:  40px 40px 0px #181a1d, -40px -40px 0px #1c1e23;
-    .profile {
-      width: 160px;
-      margin: 0 auto;
-      object-fit: cover;
-      border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
+    
+    h2 {
+      color: $primary;
     }
     p {
-      margin: 0 auto;
       line-height: 1.5;
-      text-align: center;
     }
-    .social-container {
-      display: flex;
-      gap: 1.25rem;
-      :is(.linkedin, .github) {
-        width: fit-content;
+    h3 {
+      color: $primary;
+    }
+    ul {
+      max-width: max-content;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         img {
-          width: 50px;
+          width: 40px;
         }
+      }
+      li:first-child {
+        margin: 0 0 0.625rem;
       }
     }
   }
 }
-@media (min-width: 425px) {
-  section .about-card p {
-      text-align: start;
+@media (min-width: 540px) {
+  section .about-card ul {
+    display: flex;
+    gap: 3rem;
+    li:first-child {
+        margin: 0;
+      }
+    li {
+      img {
+        width: 54px;
+      }
+    }
   }
 }
 @media (min-width: 1024px) {
   section .about-card {
-    max-width: fit-content;
-    display: grid;
-    place-content: center;
-    align-items: center;
-    grid-template-columns: 18.75rem 18.75rem 18.75rem;
-    grid-template-areas:
-      "img text text"
-      "img text text"
-      "img button social";
-    gap: 1.25rem 0;
-    .profile {
-      grid-area: img;
-      width: 200px;
-    }
+    gap: 2.5rem 0;
     p {
       grid-area: text;
       align-self: center;
-    }
-    .resume {
-      grid-area: button;
-    }
-    .social-container {
-      grid-area: social;
     }
   }
 }
