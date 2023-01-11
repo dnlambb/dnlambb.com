@@ -19,7 +19,7 @@
         />
       </svg>
 
-      <a class="heart-clip"></a>
+      <div class="heart-clip"></div>
     </div>
   </div>
 </template>
