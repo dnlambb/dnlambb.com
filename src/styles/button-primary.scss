@@ -25,6 +25,7 @@ $slice-5: inset(80% -6px 5% 0);
     -webkit-user-select: none;
     touch-action: manipulation;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
   }
 
   &:hover {

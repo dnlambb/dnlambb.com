@@ -54,6 +54,7 @@ export default {
   grid-template-columns: 100%;
   grid-template-rows: 1fr 50% 20%;
   justify-content: space-evenly;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
 
   &__tech-tag {
     width: fit-content;
