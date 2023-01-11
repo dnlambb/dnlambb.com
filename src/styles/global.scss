@@ -4,7 +4,6 @@
   font-family: 'Andika';
   src: url("/fonts/Andika-Bold.woff2"),
        url("/fonts/Andika-Regular.woff2");
-  font-display: optional;
 }
 
 @font-face {
@@ -13,7 +12,6 @@
        url("/fonts/Chivo-Light.woff2"),
        url("/fonts/Chivo-Medium.woff2"),
        url("/fonts/Chivo-Bold.woff2");
-  font-display: optional;
 }
 
 $font-title: 'Andika';
