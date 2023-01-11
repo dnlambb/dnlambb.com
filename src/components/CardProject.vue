@@ -66,6 +66,7 @@ export default {
     border-top: 0;
     background: rgba($color: #1a1c20, $alpha: 0.8);
     box-shadow: rgb(26, 28, 32, 0.4) 0px 8px 24px;
+    backdrop-filter: blur(3px);
     justify-self: center;
   }
 
@@ -84,6 +85,7 @@ export default {
     }
     p {
       margin: 0 auto;
+      line-height: 1.5;
     }
   }
 
