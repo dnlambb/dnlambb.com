@@ -41,22 +41,18 @@ const hobbies = {
       <h2>Frontend Developer</h2>
 			<p>1 year of experience in personal projects.<br/>Developing apps with React and Vue.</p>
       <ul class="list-social">
-        <Tooltip stringTooltip="GitHub">
-          <li>
-            <a href="https://github.com/dnlambb">
-              <img src="/assets/social/github.svg" alt="Github" />
-            </a>
-          </li>
-        </Tooltip>
-        <Tooltip stringTooltip="Linkedin">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez/"
-            >
-              <img src="/assets/social/linkedin.svg" alt="Linkedin" />
-            </a>
-          </li>
-        </Tooltip>
+				<li>
+					<a href="https://github.com/dnlambb">
+						<img src="/assets/social/github.svg" alt="Github" />
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.linkedin.com/in/daniel-cordero-mel%C3%A9ndez/"
+					>
+						<img src="/assets/social/linkedin.svg" alt="Linkedin" />
+					</a>
+				</li>
       </ul>
 			<div class="scroll-down-container">
 				<a href="#pinProjects">
@@ -125,6 +121,10 @@ main {
 			gap: 1.875rem;
 			img {
 				width: 50px;
+			}
+			img:hover {
+				transition: 400ms linear;
+				transform: translateY(-5px);
 			}
 		}
 		.scroll-down-container {
